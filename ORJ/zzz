@@ -1,0 +1,97 @@
+
+				<h5 class="text-center" style="display:none; " id="category"></h5><br>
+				<div class="form-check  form-check-inline checkboxes0" style="margin-left:30px; display:none;">
+					<input type="checkbox" class="form-check-input " id="select0">
+					<label class="form-check-label" for="select0">Select All</label>
+				</div>
+				<div class="form-check  form-check-inline checkboxes1" style="margin-left:30px; display:none;">
+					<input type="checkbox" class="form-check-input chck1" id="select1">
+					<label id="label1" class="form-check-label" for="select1"></label>
+				</div>
+				<div class="form-check form-check-inline checkboxes1" style="display:none;">
+					<input type="checkbox" class="form-check-input chck1" id="select2">
+					<label id="label2" class="form-check-label" for="select2"></label>
+				</div>
+				<div class="form-check form-check-inline checkboxes1" style="display:none;">
+					<input type="checkbox" class="form-check-input chck1" id="select3">
+					<label  id="label3" class="form-check-label" for="select3"></label>
+				</div>
+				<div class="form-check  form-check-inline checkboxes1" style="margin-left:30px; display:none;">
+					<input type="checkbox" class="form-check-input chck1" id="select4">
+					<label  id="label4" class="form-check-label" for="select4"></label>
+				</div>
+				<div class="form-check form-check-inline checkboxes1" style="display:none;">
+					<input type="checkbox" class="form-check-input chck1" id="select5">
+					<label  id="label5" class="form-check-label" for="select5"></label>
+				</div>
+				<div class="form-check form-check-inline checkboxes1" style="display:none;">
+					<input type="checkbox" class="form-check-input chck1" id="select6">
+					<label  id="label6" class="form-check-label" for="select6"></label>
+				</div>
+				<div class="form-check  form-check-inline checkboxes1" style="margin-left:30px; display:none;">
+					<input type="checkbox" class="form-check-input chck1" id="select7">
+					<label  id="label7" class="form-check-label" for="select7"></label>
+				</div>
+				<div class="form-check form-check-inline checkboxes1" style="display:none;">
+					<input type="checkbox" class="form-check-input chck1" id="select8">
+					<label  id="label8" class="form-check-label" for="select8"></label>
+				</div>
+				<div class="form-check form-check-inline checkboxes1" style="display:none;">
+					<input type="checkbox" class="form-check-input chck1" id="select9">
+					<label  id="label9" class="form-check-label" for="select9 "></label>
+				</div>
+				<div class="form-check  form-check-inline checkboxes2" style="margin-left:30px; display:none;">
+					<input type="checkbox" class="form-check-input chck2" id="select10">
+					<label  id="label10" class="form-check-label" for="select10"></label>
+				</div>
+				<div class="form-check form-check-inline checkboxes2" style="display:none;">
+					<input type="checkbox" class="form-check-input chck2 " id="select11">
+					<label  id="label11" class="form-check-label" for="select11"></label>
+				</div>
+				<div class="form-check form-check-inline checkboxes2" style="display:none;">
+					<input type="checkbox" class="form-check-input  chck2" id="select12">
+					<label  id="label12" class="form-check-label" for="select12"></label>
+				</div>
+				<div class="form-check  form-check-inline checkboxes2" style="margin-left:30px; display:none;">
+					<input type="checkbox" class="form-check-input chck2" id="select13">
+					<label  id="label13" class="form-check-label" for="select13"></label>
+				</div>
+				<div class="form-check form-check-inline checkboxes2" style="display:none;">
+					<input type="checkbox" class="form-check-input chck2 " id="select14">
+					<label  id="label14" class="form-check-label" for="select14"></label>
+				</div>
+				<div class="form-check form-check-inline checkboxes2" style="display:none;">
+					<input type="checkbox" class="form-check-input chck2" id="select15">
+					<label  id="label15" class="form-check-label" for="select15"></label>
+				</div>
+				<div class="form-check form-check-inline checkboxes2" style="display:none;">
+                    <p>Satellite Campuses</p>
+					<input type="checkbox" class="form-check-input chck2" id="select16">
+					<label  id="label16" class="form-check-label" for="select16"></label>
+				</div>
+				<div class="form-check form-check-inline checkboxes2" style="display:none;">
+					<input type="checkbox" class="form-check-input chck2" id="select17">
+					<label  id="label17" class="form-check-label" for="select17"></label>
+				</div>
+				<div class="form-check form-check-inline checkboxes2" style="display:none;">
+					<input type="checkbox" class="form-check-input chck2" id="select18">
+					<label  id="label18" class="form-check-label" for="select18"></label>
+				</div>
+				<div class="form-check form-check-inline checkboxes2" style="display:none;">
+					<input type="checkbox" class="form-check-input chck2" id="select19">
+					<label  id="label19" class="form-check-label" for="select19"></label>
+				</div>
+				<div class="form-check form-check-inline checkboxes2" style="display:none;">
+					<input type="checkbox" class="form-check-input chck2" id="select20">
+					<label  id="label20" class="form-check-label" for="select20"></label>
+				</div>
+                <div class="form-group dte"  style="display:none;">
+                    <label for="agenda" style="font-weight:bold;">By Year:</label>
+                    <select class="form-control" id="year" name="year" style="width:250px;">
+                    </select>
+                </div>
+				<div class="form-group dte" style="display:none;">
+                    <label for="college" id="labelForMnth" style="font-weight:bold;">By Month:</label>
+                    <select class="form-control" id="months" name="months" style="width:250px;">
+                    </select>
+                </div>
