@@ -39,7 +39,7 @@ if (!empty($_POST["login"])) {
 			else if(($user=="false")&&(empty($password))){
 				$error=1;
 				$error2=1;
-				$warning1="Please enter your usernamess!";
+				$warning1="Please enter your username!";
 				$warning2="Please enter your password!";
 			}
 			else{
