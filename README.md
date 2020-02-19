@@ -1,4 +1,4 @@
-NOTE -Before starting download the "Github Desktop and Ren'Py game engine"
+NOTE -Before starting download the "Github Desktop"
 
 how to collab:
 
