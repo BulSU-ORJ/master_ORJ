@@ -1,5 +1,5 @@
 <?php
-require_once 'C:\composer\vendor\autoload.php';
+require_once 'composer\vendor\autoload.php';
 
 // Create the Transport
 $transport = (new Swift_SmtpTransport('smtp.gmail.com', 465, 'ssl'))
