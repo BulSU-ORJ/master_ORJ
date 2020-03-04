@@ -1,8 +1,7 @@
 <?php include 'controllers-authController.php'?>
 <?php
 // redirect user to login page if they're not logged in
-
-    if(!empty($_SESSION['username'])){
+    if(!empty($_SESSION['user_id'])){
         $username=$_SESSION['username'];
         $id=$_SESSION['user_id'];
     }else{
