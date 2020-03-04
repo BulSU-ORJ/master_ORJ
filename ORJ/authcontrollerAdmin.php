@@ -56,88 +56,8 @@ if(isset($_POST['addacc-btn'])){
 	}
 }
 
-//update admins fullname
-if(isset($_POST['adminsave-btn'])){
-    if(isset($_SESSION['member_id'])){
-        $id = $_SESSION['member_id'];
-        $fullname = $_POST['fullname'];
-        $password = $_POST['password'];
-
-        $query = "SELECT * FROM members WHERE member_id = ? LIMIT 1";
-        $stmt = $conn->prepare($query);
-        $stmt->bind_param('s',$id);
-    if ($stmt->execute()) {
-        $result = $stmt->get_result();
-        $user = $result->fetch_assoc();
-        $password_hash=$user['member_password'];
-            if (password_verify($password,$password_hash)) { // if password matches 
-                $que="UPDATE members SET members_fullName='$fullname'WHERE member_id='$id'";
-                $result = mysqli_query($con, $que);
-                   if($result)
-                   {
-                       echo '<script>alert("Data Updated")</script>';
-                   }else{
-                       echo '<script>alert("Data Not Updated")</script>';
-                   } 
-            }else{
-                echo "<script>alert('Password doesn't matched')</script>";
-            }
-
-        }
-    }
-}
-//update admin email
-if (isset($_POST['adminsave-btn2'])){
-    if(isset($_SESSION['member_id'])){
-        $id = $_SESSION['member_id'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-
-        $query = "SELECT * FROM members WHERE member_id = ? LIMIT 1";
-        $stmt = $conn->prepare($query);
-        $stmt->bind_param('s',$id);
-    if ($stmt->execute()) {
-        $result = $stmt->get_result();
-        $user = $result->fetch_assoc();
-        $password_hash=$user['member_password'];
-            if (password_verify($password,$password_hash)) { // if password matches
-
-            echo "<script>alert('gumana gumana')</script>";
-            }
-        }   
-    }
-}
-//update admin password
-if(isset($_POST['adminsave-btn3'])){
-    if(isset($_SESSION['member_id'])){
-        $id = $_SESSION['member_id'];        
-        $password = $_POST['password'];
-    
-        $query = "SELECT * FROM members WHERE member_id = ? LIMIT 1";
-        $stmt = $conn->prepare($query);
-        $stmt->bind_param('s',$id);
-    if ($stmt->execute()) {
-        $result = $stmt->get_result();
-        $user = $result->fetch_assoc();
-        $password_hash=$user['member_password'];
-            if (password_verify($password,$password_hash)) { // if password matches
-                if(isset($_POST['newpassword']) == isset($_POST['Cpassword'])){
-                    $password = password_hash($_POST['newpassword'], PASSWORD_DEFAULT); //encrypt password
-                    $que="UPDATE members SET member_password='$password'WHERE member_id='$id'";
-                    $result = mysqli_query($con, $que);
-                   if($result)
-                   {
-                       echo '<script>alert("Data Updated")</script>';
-                   }else{
-                       echo '<script>alert("Data Not Updated")</script>';
-                   }
-                }
-            }
-        }   
-    }   
-}
-
-/*if(isset($_POST['update-btn'])){
+//update admin
+if(isset($_POST['update-btn'])){
     if(isset($_SESSION['member_id'])){
         $id = $_SESSION['member_id'];
         $username = $_POST['newusername'];
@@ -161,7 +81,7 @@ if(isset($_POST['adminsave-btn3'])){
             }
         }
     }
-}*/
+}
 
 //login RC
 if(isset($_POST['login'])){

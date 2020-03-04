@@ -6,6 +6,7 @@ class PDF_MC_Table extends FPDF {
 	function header(){
         
 			$this->Image('Icon/reportLogo.png',80,15);
+            $this->Image('Icon/watermark.png',135,75);
 			$this->SetFont('Arial','B',14);
 			$this->Cell(0,10,'',0,0,"C");
 			$this->Ln();
@@ -19,7 +20,7 @@ class PDF_MC_Table extends FPDF {
 			$this->Cell(0,6,'City of Malolos, Bulacan',0,0,"C");
 			$this->Ln(20);
 			$this->SetFont('Arial','',16);
-			$this->Cell(0,0,'OFFICE OF THE VICE-PRESIDENT FOR RESEARCH, EXTENSION AND TRAINING',0,0,"C");
+			$this->Cell(0,0,'OFFICE OF THE VICE-PRESIDENT FOR RESEARCH, DEVELOPMENT AND EXTENSION',0,0,"C");
 			$this->Ln();
 			$this->Cell(0,15,'',0,0,"C");
 			$this->Ln();
@@ -37,15 +38,15 @@ class PDF_MC_Table extends FPDF {
 			$this->Cell(70,10,'Research Title',1,0,'C',true);
 			$this->Cell(40,10,'Author',1,0,'C',true);
 			$this->Cell(40,10,'Email',1,0,'C',true);
-			$this->Cell(20,10,'College',1,0,'C',true);
-			$this->Cell(70,10,'Agenda',1,0,'C',true);
-			$this->Cell(40,10,'Date Uploaded',1,0,'C',true);
+			$this->Cell(30,10,'College',1,0,'C',true);
+			$this->Cell(65,10,'Agenda',1,0,'C',true);
+			$this->Cell(41,10,'Date Uploaded',1,0,'C',true);
 			$this->Ln();
 			
 		}
 		function footer(){
             date_default_timezone_set("Asia/Hong_Kong");
-			$this->setY(-25);
+			$this->setY(-15);
 			$this->setFont('Arial','',8);
 			$this->Cell(0,0,'Prepared By: '.ucwords($_SESSION["adminName"]),0,0,'L');
             $this->Ln();

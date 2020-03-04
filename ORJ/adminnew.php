@@ -9,6 +9,7 @@ $auth = new Auth();
 if(!$isLoggedIn) {
     header("Location: loginSample.php");
 }
+include('connect.php');
 $output='';
 $acronyms= array('CAFA','CAL','CBA','CCJE','CHTM','CICT','CIT','CLaw','CN','COE','COED','CS','CSER','CSSP','GS');
 foreach($acronyms as $acr){
@@ -147,12 +148,11 @@ foreach($agenda as $acr){
                     <a class="dropdown-item" style="color: black" href="dlForms.php">Forms</a>
                 </div>
             </div>
-            <div class="dropdown" style="color: white">
-                <button class="btn dropdown-toggle" id="dropdownMenuButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MANAGE ACCOUNT</button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <div class="dropdown">
+                <button class="btn dropdown-toggle" id="dropdownButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MANAGE ACCOUNT</button>
+                <div class="dropdown-menu" aria-labelledby="dropdownButton">
                     <a class="dropdown-item" style="color: black" href="addaccount.php">Add Account</a>
-                    <a class="dropdown-item" style="color: black" href="rc_accounts.php">RC Accounts</a>
-                    <a class="dropdown-item" style="color: black" href="edit_accountsample.php">Edit Account</a>
+                    <a class="dropdown-item" style="color: black" href="#">Change Password</a>
                     <a class="dropdown-item" style="color: black" href="logout.php">Log Out</a>
                 </div>
             </div>

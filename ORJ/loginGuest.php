@@ -1,7 +1,7 @@
 <?php include 'controllers-authController.php' ?>
 <?php 
-    if(!empty($_SESSION['user_id'])){
-        header("Location: B-Home.php");
+    if(!empty($_SESSION['username'])){
+        header("Location: B-HomeRegistered.php");
     }
 ?>
 <!DOCTYPE html>

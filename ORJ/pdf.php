@@ -99,7 +99,7 @@ if(isset($_POST['value'])){
              }
             $_SESSION['sort']="List of Researches for the month of ".$month;
         }else{
-            $_SESSION['sort']="";
+            $_SESSION['sort']="List of Researches";
             $response='all:all';
         }
         

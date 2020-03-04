@@ -1,12 +1,13 @@
 <?php 
     session_start();
-    if(!empty($_SESSION['user_id'])){
+    if(!empty($_SESSION['username'])){
         $username=$_SESSION['username'];
         $id=$_SESSION['user_id'];
     }else{
         header("Location: B-Home.php");
     }
 
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -196,7 +197,7 @@
               <button type="button" class="btn dropdown-toggle dropdown-toggle-split" id="btndropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
               </button>
               <div class="dropdown-menu dropdown-menu-lg-right">
-                <a class="dropdown-item" href="edit_accountGuest.php" style="color:black">Account Settings</a>
+                <a class="dropdown-item" href="changepassGuest.php" style="color:black">Account Settings</a>
                 <a class="dropdown-item" href="logout1.php" style="color:black">Log Out</a>
               </div>
             </div>
@@ -300,7 +301,7 @@
               <div class="col-sm-4 d-flex align-items-stretch">
                 <div class="card shadow p-3 mb-5 bg-white rounded">
                   <div class="card-body">
-                    <h5 class="card-title"><?php echo $username.' '.$id; ?></h5>
+                    <h5 class="card-title">"How Social Media Affects Early Childhood Development"</h5>
                         <div class="text-secondary">by Monica Colitoy</div>
                         <div class="text-secondary">September 5, 2019</div><br>
                   </div>

@@ -1,17 +1,12 @@
 <?php
-	include('connect.php');
-    $agenda = ["Climate change and Adaptation", "Biodiversity and the Management of the Natural Environment","Food safety and Security","Diagnosis and Prevention of Human Diseases and Health status of vulnerable Groups","Industry Assistance towards efficient Production and Achieving Global Standards","Cultural Heritage and Conservation","Restructuring Society and Understanding Culture towards Inclusive Nation Building","Emerging Technology and Applications to Inclusive Nation Building","Education and the Pedagogy for the Filipino Learners"];
-	
-    $agdIndex=1;
-    $data = array();
-    $data[0]='<h5 class="text-center">Select Agenda</h5><br>
+    $data='<h4 class="text mt-4" style="color: #763435">Select Agenda</h4><br>
 				<div class="form-check " style="margin-left:30px;">
 					<input type="checkbox" class="form-check-input " id="select0">
 					<label class="form-check-label" for="select0">Select All</label>
 				</div>
                 <div class="form-check" style="margin-left:30px;">
 					<input type="checkbox" class="form-check-input chck1" id="select1">
-					<label id="label1" class="form-check-label" for="select1">Climate change and Adaptation</label>
+				    <label id="label1" class="form-check-label" for="select1">Climate change and Adaptation</label>
 				</div>
                 <div class="form-check" style="margin-left:30px;">
 					<input type="checkbox" class="form-check-input chck1" id="select2">
@@ -45,20 +40,5 @@
 					<input type="checkbox" class="form-check-input chck1" id="select9">
 					<label id="label9" class="form-check-label" for="select9 ">Education and the Pedagogy for the Filipino Learners</label>
 				</div>';
-
-    foreach($agenda as $agd){
-        $agdRes=mysqli_query($con,"SELECT * FROM `uploaddata` where `agenda`='{$agd}' order by `agenda` ASC");
-        if($agdRes){
-            $agdCount=mysqli_num_rows($agdRes);
-            if($agdCount==0){
-                $data[$agdIndex]="#select".$agdIndex.'*true';
-            }else{
-                $data[$agdIndex]="#select".$agdIndex.'*false';
-            }
-            $agdIndex+=1;
-        }
-        
-    }
 	echo json_encode($data);
-	mysqli_close($con);
 ?>

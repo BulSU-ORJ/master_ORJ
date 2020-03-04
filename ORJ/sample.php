@@ -4,6 +4,7 @@ $resultflag=0;
 $arr=array();
 $col='';
 $acr='';
+$rowCount=0;
 
 if((isset($_FILES['uploaded_file']['tmp_name'])) && (isset($_FILES['imgrad_file']['tmp_name']))) {
     // Make sure the file was sent without errors
@@ -43,23 +44,30 @@ if((isset($_FILES['uploaded_file']['tmp_name'])) && (isset($_FILES['imgrad_file'
         
         $author=ucwords($fname.' '.$lname);
 		$title=$con -> real_escape_string(substr($name,0,strrpos($name,".")));
-        if(($ext=="pdf"||$ext=="PDF")&&($ext2=="pdf"||$ext2=="PDF")){
-            $temp = explode(".",$_FILES["uploaded_file"]["name"]);
-            $newfilename=$researchNo.'.'.end($temp);//change the filename to accno
-            $path=$con -> real_escape_string("files/".$newfilename);
-            $targetfolder= $con -> real_escape_string("imgradFiles/".basename($_FILES['imgrad_file']['name']));
-            $result=mysqli_query($con,"INSERT INTO `uploaddata`(`id`,`researchNo`, `author`, `author_category`, `title`, `agenda`, `college`, `acronym`, `email`, `date`, `abstract`, `filePath`, `imgradPath`, `viewCount`) VALUES ('null','{$researchNo}','{$author}','{$category}','{$title}','{$agenda}','{$col}','{$acr}','{$email}',NOW(),'{$abstract}','{$path}','{$targetfolder}',0)");
-            if($result=== TRUE){
-                if ((move_uploaded_file($_FILES['uploaded_file']['tmp_name'],$path)) && (move_uploaded_file($_FILES['imgrad_file']['tmp_name'],$targetfolder))) {//move to specific folder
-                    $response['message']="true";// Move succeed.
-                } else {
-                    $response['message']="Error in Uploading";// Move failed. Possible duplicate?
+        if($search=mysqli_query($con,"SELECT * FROM `uploaddata` WHERE `title`='{$title}'")){
+            $rowCount=mysqli_num_rows($search);
+            if($rowCount==0){
+                if(($ext=="pdf"||$ext=="PDF")&&($ext2=="pdf"||$ext2=="PDF")){
+                    $temp = explode(".",$_FILES["uploaded_file"]["name"]);
+                    $newfilename=$researchNo.'.'.end($temp);//change the filename to accno
+                    $path=$con -> real_escape_string("files/".$newfilename);
+                    $targetfolder= $con -> real_escape_string("imgradFiles/".basename($_FILES['imgrad_file']['name']));
+                    $result=mysqli_query($con,"INSERT INTO `uploaddata`(`id`,`researchNo`, `author`, `author_category`, `title`, `agenda`, `college`, `acronym`, `email`, `date`, `abstract`, `filePath`, `imgradPath`, `viewCount`) VALUES ('null','{$researchNo}','{$author}','{$category}','{$title}','{$agenda}','{$col}','{$acr}','{$email}',NOW(),'{$abstract}','{$path}','{$targetfolder}',0)");
+                    if($result=== TRUE){
+                        if ((move_uploaded_file($_FILES['uploaded_file']['tmp_name'],$path)) && (move_uploaded_file($_FILES['imgrad_file']['tmp_name'],$targetfolder))) {//move to specific folder
+                            $response['message']="true";// Move succeed.
+                        } else {
+                            $response['message']="Error in Uploading";// Move failed. Possible duplicate?
+                        }
+                    }else{
+                        $response['message']="Error in Uploading";
+                    }
+                }else{
+                    $response['message']= "notPDF";
                 }
             }else{
-                $response['message']="Error in Uploading";
+                $response['message']="PDF File already exist in the database";
             }
-        }else{
-            $response['message']= "notPDF";
         }
     }
 	else {

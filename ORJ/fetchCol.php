@@ -1,10 +1,5 @@
 <?php
-	include('connect.php');
-    $colleges= ["CAFA","CAL","CBA","CCJE","CHTM","CICT","CIT","CLaw","CN","COE","COED","CS","CSER","CSSP","GS","Bulsu-Bustos","Bulsu-Hagonoy","Bulsu-Pulilan","Bulsu-Meneses","Bulsu-Sarmiento"];
-	
-    $colIndex=1;
-    $data = array();
-    $data[0]='<h5 class="text-center">Select Colleges</h5><br>
+    $data='<h4 class="text mt-4" style="color: #763435">Select Colleges</h4><br>
 				<div class="form-check " style="margin-left:30px;">
 					<input type="checkbox" class="form-check-input " id="select0">
 					<label class="form-check-label" for="select0">Select All</label>
@@ -68,43 +63,32 @@
                 <div class="form-check" style="margin-left:30px;">
 					<input type="checkbox" class="form-check-input chck1" id="select15">
 					<label id="label15" class="form-check-label" for="select15">Graduate School (GS)</label>
+				</div><br>
+                <div class="form-check">
+                    <h5 style="font-weight: bold">Satellite Campuses</h5>
 				</div>
-                <div class="form-check" style="margin-left:30px;">
-                    <p>Satellite Campuses</p>
-					<input type="checkbox" class="form-check-input chck1" id="select16">
-					<label id="label16" class="form-check-label" for="select16">Bulsu-Bustos Campus</label>
-				</div>
-                <div class="form-check" style="margin-left:30px;">
-					<input type="checkbox" class="form-check-input chck1" id="select17">
-					<label id="label17" class="form-check-label" for="select17">Bulsu-Hagonoy Campus</label>
-				</div>
-                <div class="form-check" style="margin-left:30px;">
-					<input type="checkbox" class="form-check-input chck1" id="select18">
-					<label id="label18" class="form-check-label" for="select18">Bulsu-Meneses Campus</label>
-				</div>
-                <div class="form-check" style="margin-left:30px;">
-					<input type="checkbox" class="form-check-input chck1" id="select19">
-					<label id="label19" class="form-check-label" for="select19">Bulsu-Pulilan Campus</label>
-				</div>
-                <div class="form-check" style="margin-left:30px;">
-					<input type="checkbox" class="form-check-input chck1" id="select20">
-					<label id="label20" class="form-check-label" for="select20">Bulsu-Sarmiento Campus</label>
-				</div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-check" style="margin-left:30px;">
+                            <input type="checkbox" class="form-check-input chck1" id="select16">
+                            <label id="label16" class="form-check-label" for="select16">Bulsu-Bustos Campus</label>
+                        </div>
+                        <div class="form-check" style="margin-left:30px;">
+                            <input type="checkbox" class="form-check-input chck1" id="select17">
+                            <label id="label17" class="form-check-label" for="select17">Bulsu-Hagonoy Campus</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-check" style="margin-left:30px;">
+                            <input type="checkbox" class="form-check-input chck1" id="select18">
+                            <label id="label18" class="form-check-label" for="select18">Bulsu-Meneses Campus</label>
+                        </div>
+                        <div class="form-check" style="margin-left:30px;">
+                            <input type="checkbox" class="form-check-input chck1" id="select19">
+                            <label id="label19" class="form-check-label" for="select19">Bulsu-Sarmiento Campus</label>
+                        </div>
+                    </div>
+                </div>
 ';
-    foreach($colleges as $col){
-        $colRes=mysqli_query($con,"SELECT * FROM `uploaddata` where `acronym`='{$col}' order by `acronym` ASC");
-        if($colRes){
-            $colCount=mysqli_num_rows($colRes);
-            if($colCount==0){
-                $data[$colIndex]="#select".$colIndex.'*true';
-            }else{
-                $data[$colIndex]="#select".$colIndex.'*false';
-            }
-            $colIndex+=1;
-        }
-        
-    }
-
 	echo json_encode($data);
-	mysqli_close($con);
 ?>

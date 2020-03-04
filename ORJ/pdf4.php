@@ -5,11 +5,18 @@ if(isset($_POST['category'])){
     $category=$_POST['category'];
     if($category=="Select All"){
         $response='all';
-        $_SESSION['sort']="List of Researches sort by Affiliation";
+        $_SESSION['sort']="List of Researches";
+        $_SESSION['flag']=1;
     }else{
         $_SESSION['category']=$category;
         $response='not';
-        $_SESSION['sort']="List of Researches by ".$category;
+        if(($category=="Student")||($category=="student")){
+            $_SESSION['sort']="List of Researches of Students";
+        }else{
+            $_SESSION['sort']="List of Researches of Faculties";
+        }
+        $_SESSION['flag']=0;
+        $response='all';
     }
 }
     
