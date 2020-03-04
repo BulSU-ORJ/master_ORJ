@@ -18,13 +18,9 @@ function filterTable($query)
 ?> 
 <?php 
     session_start();
-    if(!empty($_SESSION['user_id'])){
-        $username=$_SESSION['username'];
-        $id=$_SESSION['user_id'];
-    }else{
+    if(empty($_SESSION['username'])){
         header("Location: B-Home.php");
     }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -249,7 +245,7 @@ function filterTable($query)
               <button type="button" class="btn dropdown-toggle dropdown-toggle-split" id="btndropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
               </button>
               <div class="dropdown-menu dropdown-menu-lg-right">
-                <a class="dropdown-item" href="edit_accountGuest.php" style="color:black">Account Settings</a>
+                <a class="dropdown-item" href="changepassGuest.php" style="color:black">Account Settings</a>
                 <a class="dropdown-item" href="logout1.php" style="color:black">Log Out</a>
               </div>
             </div>

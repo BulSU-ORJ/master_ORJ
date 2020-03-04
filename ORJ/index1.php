@@ -1,14 +1,8 @@
 <?php include 'authcontrollerAdmin.php'?>
 <?php
 // redirect user to login page if they're not logged in
-session_start();
-require_once "authCookieSessionValidate.php";
-require_once "Auth.php";
-
-$auth = new Auth();
-
-if(!$isLoggedIn) {
-    header("Location: loginSample.php");
+if (empty($_SESSION['id'])) {
+    header('location: loginSample.php');
 }
 ?>
 <!DOCTYPE html>

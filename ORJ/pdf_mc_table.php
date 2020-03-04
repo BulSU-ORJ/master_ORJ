@@ -2,8 +2,9 @@
 //call main fpdf file
 require('fpdf/fpdf.php');
 //create new class extending fpdf class
-class PDF_MC_Table extends FPDF {
+class PDF_Table extends FPDF {
 	function header(){
+        
 			$this->Image('Icon/reportLogo.png',80,15);
 			$this->SetFont('Arial','B',14);
 			$this->Cell(0,10,'',0,0,"C");
@@ -23,26 +24,18 @@ class PDF_MC_Table extends FPDF {
 			$this->Cell(0,15,'',0,0,"C");
 			$this->Ln();
 			$this->Line(15, 60, 341, 60);
-			$this->SetFillColor(118,52,53);
-			$this->SetTextColor(255,255,255);
-			$this->SetDrawColor(118,52,53);
-			$this->SetFont('Times','B',11);
-			$this->Cell(15,10,'No.',1,0,'C',true);
-			$this->Cell(30,10,'Research No.',1,0,'C',true);
-			$this->Cell(70,10,'Research Title',1,0,'C',true);
-			$this->Cell(40,10,'Author',1,0,'C',true);
-			$this->Cell(20,10,'College',1,0,'C',true);
-			$this->Cell(70,10,'Agenda',1,0,'C',true);
-			$this->Cell(40,10,'Date Uploaded',1,0,'C',true);
-			$this->Cell(20,10,'Views',1,0,'C',true);
-			$this->Cell(21,10,'Viewed By',1,0,'C',true);
-			$this->Ln();
 			
 		}
 		function footer(){
-			$this->setY(-15);
+            date_default_timezone_set("Asia/Hong_Kong");
+			$this->setY(-25);
 			$this->setFont('Arial','',8);
-			$this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
+			$this->Cell(0,0,'Prepared By: '.ucwords($_SESSION["adminName"]),0,0,'L');
+            $this->Ln();
+			$this->setFont('Arial','',8);
+			$this->Cell(0,8,'As of:'.date("m/d/Y h:i a"),0,0,'L');
+			$this->setFont('Arial','',8);
+			$this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'R');
 		}
 // variable to store widths and aligns of cells, and line height
 var $widths;

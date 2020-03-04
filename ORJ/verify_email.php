@@ -13,7 +13,7 @@ if (isset($_GET['token'])) {
         $query = "UPDATE users SET verified=1 WHERE token='$token'";
 
         if (mysqli_query($conn, $query)) {
-            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
             $_SESSION['email'] = $user['email'];
             $_SESSION['verified'] = true;

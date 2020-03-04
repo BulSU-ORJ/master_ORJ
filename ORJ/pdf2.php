@@ -60,7 +60,7 @@ if(isset($_POST['id'])){
                 $flag+=1;
             }else if($arr[$i]=='13'){
                 $_SESSION['col'].="CSER";
-                $_SESSION['sort'].="College of Sports, Exercise and Recreation";
+                $_SESSION['sort'].="CSER";
                 $flag+=1;
             }else if($arr[$i]=='14'){
                 $_SESSION['col'].="CSSP";
@@ -83,8 +83,8 @@ if(isset($_POST['id'])){
                 $_SESSION['sort'].="Bulsu-Meneses Campus";
                 $flag+=1;
             }else if($arr[$i]=='19'){
-                $_SESSION['col'].="Bulsu-Pulilan";
-                $_SESSION['sort'].="Bulsu-Pulilan Campus";
+                $_SESSION['col'].="Bulsu-Sarmiento";
+                $_SESSION['sort'].="Bulsu-Sarmiento Campus";
                 $flag+=1;
             }else{
                 if($arr[$i]=='20'){
@@ -175,8 +175,8 @@ if(isset($_POST['id'])){
             $_SESSION['sort']="Bulsu-Meneses Campus";
             $flag+=1;
         }else if($arr[0]=='19'){
-            $_SESSION['col']="Bulsu-Pulilan";
-            $_SESSION['sort']="Bulsu-Pulilan Campus";
+            $_SESSION['col']="Bulsu-Sarmiento";
+            $_SESSION['sort']="Bulsu-Sarmiento Campus";
             $flag+=1;
         }else{
             if($arr[0]=='20'){
