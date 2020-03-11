@@ -216,7 +216,7 @@ function filterTable($query)
         <div class="collapse navbar-collapse" data-hover="dropdown" data-animations="fadeInDown" id="navbarSupportedContent" >
             <ul class="navbar-nav mr-auto">
             </ul>
-            <li style="list-style-type:none;"><a class="btn nav-item" href="B-Home.php">HOME</a></li>
+            <li style="list-style-type:none;"><a class="btn nav-item" href="index.php">HOME</a></li>
             <li style="list-style-type:none;"><a class="btn nav-item" href="B-Researches.php" style="font-weight: bold" id="disabled">RESEARCHES</a></li>
             <li style="list-style-type:none;"><a class="btn nav-item" href="B-Agenda.php">AGENDA</a></li>
             <li style="list-style-type:none;"><a class="btn nav-item" href="B-Colleges.php">COLLEGES</a></li>
