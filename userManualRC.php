@@ -146,7 +146,7 @@ foreach($agenda as $acr){
             <div class="dropdown" style="color: white">
                 <button class="btn dropdown-toggle" id="dropdownMenuButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MANAGE ACCOUNT</button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" style="color: black" href="#">Edit Account</a>
+                    <a class="dropdown-item" style="color: black" href="edit_accountRC.php">Edit Account</a>
                     <a class="dropdown-item" style="color: black" href="logout.php">Log Out</a>
                 </div>
             </div>

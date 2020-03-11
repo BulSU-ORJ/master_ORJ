@@ -65,7 +65,7 @@ if(!$isLoggedIn) {
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" style="color: black" href="addaccount.php">Add Account</a>
                     <a class="dropdown-item" style="color: black" href="rc_accounts.php">RC Accounts</a>
-                    <a class="dropdown-item" style="color: black" href="changepassAdmin.php">Edit Account</a>
+                    <a class="dropdown-item" style="color: black" href="edit_accountsample.php">Edit Account</a>
                     <a class="dropdown-item" style="color: black" href="logout.php">Log Out</a>
                 </div>
             </div>

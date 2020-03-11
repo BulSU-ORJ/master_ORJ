@@ -590,7 +590,7 @@ $count=1;
             <ul class="navbar-nav mr-auto"></ul>
             <li style="list-style-type:none;"><a class="btn nav-item" href="adminnew.php">DASHBOARD</a></li>
             <li style="list-style-type:none;"><a class="btn nav-item"  style="font-weight: bold;" href="uploadnew.php" id="disabled">RESEARCHES</a></li>
-            <li style="list-style-type:none;"><a class="btn nav-item" href="uploadform.php">UPLOAD FORM</a></li>
+            <li style="list-style-type:none;"><a class="btn nav-item" href="uploadform.php" >UPLOAD FORM</a></li>
             <li style="list-style-type:none;"><div class="dropdown" style="color: white;">
                 <button class="btn dropdown-toggle" id="dropdownMenuButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">OPTIONS</button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -603,7 +603,7 @@ $count=1;
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" style="color: black" href="rc_accounts.php">RC Accounts</a>
                     <a class="dropdown-item" style="color: black" href="addaccount.php">Add Account</a>
-                    <a class="dropdown-item" style="color: black" href="changepassAdmin.php">Edit Account</a>
+                    <a class="dropdown-item" style="color: black" href="edit_accountsample.php">Edit Account</a>
                     <a class="dropdown-item" style="color: black" href="logout.php">Log Out</a>
                 </div>
                 </div></li>
