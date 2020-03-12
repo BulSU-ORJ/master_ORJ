@@ -21,7 +21,7 @@
     body{
       background:url("Icon/background2.png") center no-repeat;
       background-size: cover;
-        background-attachment: fixed;
+    background-attachment: fixed;
     }
     .form-container{
     background: #fff;
