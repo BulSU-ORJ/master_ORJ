@@ -6,16 +6,12 @@ function filterTable($query){
     $connect = mysqli_connect("localhost", "root", "", "ovpretdb");
     $filter_Result = mysqli_query($connect, $query);
     return $filter_Result;
-}?>
-<?php   
+}?> 
+<?php 
     session_start();
-    if(!empty($_SESSION['user_id'])){
-        $username=$_SESSION['username'];
-        $id=$_SESSION['user_id'];
-    }else{
+    if(empty($_SESSION['username'])){
         header("Location: B-Home.php");
     }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

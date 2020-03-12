@@ -45,7 +45,7 @@
 <body>
     
 	<div class="container">
-            <form class="form-container col-sm-6 col-md-6   " style="float:right; margin-top: 6%" method="POST" action="register.php" name="vform">
+            <form class="form-container col-sm-6 col-md-6   " style="float:right; margin-top: 6%" method="POST" action="register.php" onsubmit="return Validate();" name="vform">
                 <div class="form-group" style="text-align: center;">
                     <h3>Sign Up Here</h3>
                 </div>

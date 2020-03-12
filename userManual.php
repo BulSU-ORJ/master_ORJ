@@ -119,36 +119,35 @@ foreach($agenda as $acr){
 	</style>
 </head>
 <body style="background-color: #f6f6f6;">
-    <nav class="navbar nav-tabs navbar-expand-lg navbar-dark" style="background-color: #763435">
-        <a class="navbar-brand" href="#">
-            <img class="img-fluid d-lg-block d-none" style="height: 85px" src="Icon/header.png">
-            <img class="img-fluid d-lg-none" style="height: 49px" src="Icon/header.png">
+<nav class="navbar nav-tabs navbar-expand-lg navbar-dark" style="background-color: #763435">
+        <a class="navbar-brand justify-content-left" href="#">
+            <img class="img d-lg-block d-none" style="height: 75px" src="Icon/header.png">
+            <img class="img d-lg-none" style="height: 43px" src="Icon/header.png">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler ml-auto hidden-sm-up float-xs-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent" >
-            <ul class="navbar-nav mr-auto">
-            </ul>
-            <a class="btn nav-item" href="adminnew.php">DASHBOARD</a>
-            <a class="btn nav-item" href="uploadnew.php">RESEARCHES</a>
-            <a class="btn nav-item" href="uploadform.php">UPLOAD FORM</a>
-            <div class="dropdown" style="color: white">
-                <button class="btn dropdown-toggle" id="dropdownMenuButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-weight: bold">OPTIONS</button>
+            <ul class="navbar-nav mr-auto"></ul>
+            <li style="list-style-type:none;"><a class="btn nav-item" href="adminnew.php">DASHBOARD</a></li>
+            <li style="list-style-type:none;"><a class="btn nav-item"  style="font-weight: bold;" href="uploadnew.php" >RESEARCHES</a></li>
+            <li style="list-style-type:none;"><a class="btn nav-item" href="uploadform.php">UPLOAD FORM</a></li>
+            <li style="list-style-type:none;"><div class="dropdown" style="color: white;">
+                <button class="btn dropdown-toggle" id="dropdownMenuButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">OPTIONS</button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" style="color: black" href="userManual.php">Documentation</a>
                     <a class="dropdown-item" style="color: black" href="dlForms.php">Forms</a>
                 </div>
-            </div>
-            <div class="dropdown" style="color: white">
-                <button class="btn dropdown-toggle" id="dropdownMenuButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MANAGE ACCOUNT</button>
+                </div></li>
+            <li style="list-style-type:none;"><div class="dropdown" style="color: white;">
+              <button class="btn dropdown-toggle" id="dropdownMenuButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MANAGE ACCOUNT</button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" style="color: black" href="addaccount.php">Add Account</a>
                     <a class="dropdown-item" style="color: black" href="rc_accounts.php">RC Accounts</a>
+                    <a class="dropdown-item" style="color: black" href="addaccount.php">Add Account</a>
                     <a class="dropdown-item" style="color: black" href="edit_accountsample.php">Edit Account</a>
                     <a class="dropdown-item" style="color: black" href="logout.php">Log Out</a>
                 </div>
-            </div>
+                </div></li>
         </div>
     </nav>
 </body>
