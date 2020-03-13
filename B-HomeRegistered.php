@@ -1,13 +1,11 @@
 <?php 
     session_start();
-    if(!empty($_SESSION['username'])){
+    if(!empty($_SESSION['user_id'])){
         $username=$_SESSION['username'];
         $id=$_SESSION['user_id'];
     }else{
-        header("Location: B-Home.php");
+        header("Location: index.php");
     }
-
-    
 ?>
 <!DOCTYPE html>
 <html lang="en">

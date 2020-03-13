@@ -7,12 +7,6 @@ function filterTable($query){
     $filter_Result = mysqli_query($connect, $query);
     return $filter_Result;
 }?> 
-<?php 
-    session_start();
-    if(!empty($_SESSION['username'])){
-        header("Location: B-HomeRegistered.php");
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
