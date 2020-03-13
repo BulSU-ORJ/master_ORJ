@@ -1,9 +1,13 @@
 <?php include 'authcontrollerAdmin.php';
-
+?>
+<?php
 // redirect user to login page if they're not logged in
-if (empty($_SESSION['id'])) {
-    header('location: loginSample.php');
-}
+    if(!empty($_SESSION['userRC_id'])){
+        $username=$_SESSION['username'];
+        $id=$_SESSION['userRC_id'];
+    }else{
+        header("Location: adminnew.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

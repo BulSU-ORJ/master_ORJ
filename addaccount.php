@@ -77,38 +77,26 @@ if(!$isLoggedIn) {
                     <h3>Add Account Here</h3>
                 </div>
                 <div class="form-group">
-                    <div id="firstname_div" class="row" style="margin-bottom: 10px; margin-right: 5px">
                         <label class="col-sm-4">First Name:</label>
-                        <input type="text" style="padding-top: 2px; padding-bottom: 2px; float:right"  class="form-control form-control-lg col-sm-8" name="firstname" placeholder="Enter First Name" >
-                        <div id="firstname_error"></div>
-                    </div>
-                    <div id="lastname_div" class="row" style="margin-bottom: 10px; margin-right: 5px">
+                        <input type="text" style="float: right;"class="form-control form-control-lg col-sm-8" name="firstname" placeholder="Enter First Name" required>
+                    
                         <label class="col-sm-4">Last Name:</label>
-                        <input type="text" style="padding-top: 2px; padding-bottom: 2px; float:right"  class="form-control form-control-lg col-sm-8" name="lastname" placeholder="Enter Last Name">
-                        <div id="lastname_error"></div>
-                    </div>
-                    <div id="username_div" class="row" style="margin-bottom: 10px; margin-right: 5px">
+                        <input type="text" style="float:right"  class="form-control form-control-lg col-sm-8" name="lastname" placeholder="Enter Last Name" required>
+
                         <label class="col-sm-4">Username:</label>
-                        <input type="text" style="padding-top: 2px; padding-bottom: 2px; float:right"  class="form-control form-control-lg col-sm-8"  name="username" id="username" placeholder="Enter Username">
+                        <input type="text" style="float:right"  class="form-control form-control-lg col-sm-8"  name="username" id="username" onchange="checkuser();" placeholder="Enter Username" required>
                         <div id="name_error"></div>
-                    </div>
                     
-                    <div id="password_div" class="row" style="margin-bottom: 10px; margin-right: 5px">
                         <label class="col-sm-4">Password:</label>
-                        <input type="password" style="padding-top: 2px; padding-bottom: 2px; float:right"  class="form-control form-control-lg col-sm-8" name="password" placeholder="Enter Password">
-                    </div>
+                        <input type="password" style="float:right"  class="form-control form-control-lg col-sm-8" name="password" placeholder="Enter Password" required>
                     
-                    <div id="pass_confirm_div" class="row" style="margin-bottom: 10px; margin-right: 5px"> 
                         <label class="col-sm-4">Confirm Password:</label>
-                        <input type="password" style="padding-top: 2px; padding-bottom: 2px; float:right;"  class="form-control form-control-lg col-sm-8" name="password_confirm" placeholder="Enter Confirm Password">
-                        <div id="password_error"></div>
-                    </div>
-                    
-                    <div id="email_div" class="row" style="margin-bottom: 10px; margin-right: 5px">
+                        <input type="password" style="float:right;"  class="form-control form-control-lg col-sm-8" name="password_confirm" placeholder="Enter Confirm Password" required>
+                     
                         <label class="col-sm-4">Email:</label><br>
-                        <input type="email" style="padding-top: 2px; padding-bottom: 2px; float:right"  class="form-control form-control-lg col-sm-8" name="email" id="email"  placeholder="Enter Email Address">
+                        <input type="email" style="float:right"  class="form-control form-control-lg col-sm-8" name="email" id="email"  onchange="checkemail();" placeholder="Enter Email Address" required>
                         <div id="email_error"></div>
-                    </div>
+                    
                     <div class="form-group">
                     <label for="college">College Department:</label>
                     <select class="form-control" id="college" name="college">
@@ -140,133 +128,64 @@ if(!$isLoggedIn) {
 
 <script type="text/javascript">
     // SELECTING ALL TEXT ELEMENTS
-var firstname = document.forms['vform']['firstname'];
-var lastname = document.forms['vform']['lastname'];
 var username = document.forms['vform']['username'];
-var password = document.forms['vform']['password'];
-var password_confirm = document.forms['vform']['password_confirm'];
 var email = document.forms['vform']['email'];
-// SELECTING ALL ERROR DISPLAY ELEMENTS
-var firstname_error = document.getElementById('firstname_error');
-var lastname_error = document.getElementById('lastname_error');
-var name_error = document.getElementById('name_error');
-var password_error = document.getElementById('password_error');
-var email_error = document.getElementById('email_error');
-// SETTING ALL EVENT LISTENERS
-firstname.addEventListener('blur', firstnameVerify, true);
-lastname.addEventListener('blur', lastnameVerify, true);
-username.addEventListener('blur', nameVerify, true);
-email.addEventListener('blur', emailVerify, true);
-password.addEventListener('blur', passwordVerify, true);
-
-// validation function
-function Validate() {
-  // validate firstname
-  if (firstname.value == "") {
-    firstname.style.border = "1px solid red";
-    document.getElementById('firstname_div').style.color = "red";
-    firstname_error.textContent = "Firstname is required";
-    firstname.focus();
-    return false;
+function checkuser(){
+  if(username.value)
+ {
+  $.ajax({
+  type: 'post',
+  url: 'checkacct.php',
+  data: {
+   user_name:username.value,
+  },
+  success: function (response) {
+   $( '#name_error' ).html(response);
+   if(response=="OK")   
+   {
+    return true;    
+   }
+   else
+   {
+    return false;   
+   }
   }
-  // validate lastname
-  if (lastname.value == "") {
-    lastname.style.border = "1px solid red";
-    document.getElementById('lastname_div').style.color = "red";
-    lastname_error.textContent = "lastname is required";
-    lastname.focus();
-    return false;
-  }
-  // validate username
-  if (username.value == "") {
-    username.style.border = "1px solid red";
-    document.getElementById('username_div').style.color = "red";
-    name_error.textContent = "Username is required";
-    username.focus();
-    return false;
-  }
-  // validate username
-  if (username.value.length < 3) {
-    username.style.border = "1px solid red";
-    document.getElementById('username_div').style.color = "red";
-    name_error.textContent = "Username must be at least 3 characters";
-    username.focus();
-    return false;
-  }
-
-  // validate password
-  if (password.value == "") {
-    password.style.border = "1px solid red";
-    document.getElementById('password_div').style.color = "red";
-    password_confirm.style.border = "1px solid red";
-    password_error.textContent = "Password is required";
-    password.focus();
-    return false;
-  }
-  // check if the two passwords match
-  if (password.value != password_confirm.value) {
-    password.style.border = "1px solid red";
-    document.getElementById('pass_confirm_div').style.color = "red";
-    password_confirm.style.border = "1px solid red";
-    password_error.innerHTML = "The two passwords do not match";
-    return false;
-  }
-  if (email.value == "") {
-    email.style.border = "1px solid red";
-    document.getElementById('email_div').style.color = "red";
-    email_error.textContent = "Email is required";
-    email.focus();
-    return false;
-  }
-
+  });
+ }
+ else
+ {
+  $( '#name_error' ).html("");
+  return false;
+ }
 }
-// event handler functions
-function firstnameVerify() {
-  if (firstname.value != "") {
-   firstname.style.border = "1px solid #5e6e66";
-   document.getElementById('firstname_div').style.color = "#5e6e66";
-   firstname_error.innerHTML = "";
-   return true;
-    }
-}
-function lastnameVerify() {
-  if (lastname.value != "") {
-   lastname.style.border = "1px solid #5e6e66";
-   document.getElementById('lastname_div').style.color = "#5e6e66";
-   lastname_error.innerHTML = "";
-   return true;
+function checkemail()
+{
+    
+ if(email.value)
+ {
+  $.ajax({
+  type: 'post',
+  url: 'checkacct.php',
+  data: {
+   user_email:email.value,
+  },
+  success: function (response) {
+   $( '#email_error' ).html(response);
+   if(response=="OK")   
+   {
+    return true;    
+   }
+   else
+   {
+    return false;   
+   }
   }
+  });
+ }
+ else
+ {
+  $( '#email_error' ).html("");
+  return false;
+ }
 }
-function nameVerify() {
-  if (username.value != "") {
-   username.style.border = "1px solid #5e6e66";
-   document.getElementById('username_div').style.color = "#5e6e66";
-   name_error.innerHTML = "";
-   return true;
-  }
-}
-function emailVerify() {
-  if (email.value != "") {
-    email.style.border = "1px solid #5e6e66";
-    document.getElementById('email_div').style.color = "#5e6e66";
-    email_error.innerHTML = "";
-    return true;
-  }
-}
-function passwordVerify() {
-  if (password.value != "") {
-    password.style.border = "1px solid #5e6e66";
-    document.getElementById('pass_confirm_div').style.color = "#5e6e66";
-    document.getElementById('password_div').style.color = "#5e6e66";
-    password_error.innerHTML = "";
-    return true;
-  }
-  if (password.value === password_confirm.value) {
-    password.style.border = "1px solid #5e6e66";
-    document.getElementById('pass_confirm_div').style.color = "#5e6e66";
-    password_error.innerHTML = "";
-    return true;
-  }
-}
-
 </script>

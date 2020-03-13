@@ -44,7 +44,7 @@ if (isset($_POST['signup-btn'])) {
                     $_SESSION['verified'] = false;
                     $_SESSION['message'] = 'You are Now Registered';
                     $_SESSION['type'] = 'alert-success';
-                    header('location: index.php');
+                    header('location: check.php');
                 } else {
                     $_SESSION['error_msg'] = "Database error: Could not register user";
                 }
