@@ -9,8 +9,11 @@ function filterTable($query){
 }?> 
 <?php 
     session_start();
-    if(empty($_SESSION['username'])){
-        header("Location: B-Home.php");
+    if(!empty($_SESSION['user_id'])){
+        $username=$_SESSION['username'];
+        $id=$_SESSION['user_id'];
+    }else{
+        header("Location: index.php");
     }
 ?>
 <!DOCTYPE html>

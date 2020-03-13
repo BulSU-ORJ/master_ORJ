@@ -1,9 +1,3 @@
-<?php 
-    session_start();
-    if(!empty($_SESSION['username'])){
-        header("Location: B-HomeRegistered.php");
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
