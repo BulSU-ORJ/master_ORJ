@@ -1,7 +1,7 @@
 <?php include 'controllers-authController.php' ?>
 <?php 
-    if(!empty($_SESSION['username'])){
-        header("Location: B-HomeRegistered.php");
+    if(!empty($_SESSION['user_id'])){
+        header("Location: B-Home.php");
     }
 ?>
 <!DOCTYPE html>
@@ -11,9 +11,9 @@
 	<meta charset="UTF-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-
   	<!-- Bootstrap CSS -->
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="trytry.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -45,29 +45,29 @@
     </style>
 </head>
 <body>
-	<div class="container-fluid" >
-      <div class="col-sm-8 col-md-5" style="float: right; margin-top: 15%; margin-right: 10%;">
-	            <form class="form-container"  method="POST" name="vform" action="loginGuest.php" onsubmit="return Validate()">
+	<div class="container">
+	            <form class="form-container col-sm-6 col-md-6" style="float: right; margin-top: 10%;" method="POST" name="vform" action="loginGuest.php" onsubmit="return Validate()">
 	            	 <div class="form-group">
-      							<img class="img-fluid d-lg-block d-none"  src="header3.png">
-      							<img class="img-fluid d-lg-none" id="headerLogo" style="height: 50px" src="header3.2.png">
-                    <div id="main_error"></div>
-                    <div id="username_div">
-      						  <label >Username:</label>
-      							<input type="text" class="form-control" placeholder="Enter Username" name="username" id="username" >
-                    <div id="name_error"></div>
+      							<img class="img-fluid d-lg-block d-none pb-3"  src="header3.png" style="content">
+      							<img class="img-fluid d-lg-none" id="headerLogo" style="height: 70px" src="header3.2.png">
                     </div>
-                    <div id="password_div">
-      						  <label >Password:</label>
-      							<input type="password" class="form-control" placeholder="Enter Password"name="password" id="password">
+                    <div class="form-group">
+                        <div id="username_div" class="row" style="margin-bottom: 10px; margin-right: 5px">
+                                  <label class="col-sm-4">Username:</label>
+                                    <input type="text" style="float: right;" class="form-control col-sm-8" placeholder="Enter Username" name="username" id="username">
+                        <div id="name_error"></div>
+                        </div>
+                    <div id="password_div" class="row" style="margin-bottom: 10px; margin-right: 5px">
+      						  <label class="col-sm-4">Password:</label>
+      							<input type="password" style="float: right;" class="form-control col-sm-8" placeholder="Enter Password" name="password" id="password">
                     <div id="password_error"></div>
                     </div><br/>
-                    <input type="submit"  class="btn btn-primary btn-block" name="login-btn" value="Login" onclick="checklogin();">
-                    <a href="forgetpass.php" class="text-decoration-none" id="forgotPass" >Forgot Password?</a>
-                  </div>
-			    </form>
-			</div>
-		</div>
+                    <input type="submit"  class="btn btn-dark btn-block" name="login-btn" value="Login" onclick="checklogin();"><br>
+                    <p style="text-align:center">Don't have an account? <a href="register.php">Sign Up</a></p>
+                    <p style="text-align:center"><a href="forgetpass.php" id="forgotPass" >Forgot Password?</a></p>
+                    </div>
+        </form>
+    </div>
 </body>
 </html>
 <script type="text/javascript">
