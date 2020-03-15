@@ -124,11 +124,19 @@ foreach($agenda as $acr){
           min-height: 200px;
           height: auto;
         }
+        #dropdownButton{
+            color: white;
+        }
+        #dropdownButton:hover{
+            color: white;
+            font-weight: bold;
+            transition: 0.3s;
+        }
 	</style>
 </head>
 <body style="background-color: #f6f6f6;">
     <button id="myBtn">Back To Top</button>
-<nav class="navbar nav-tabs navbar-expand-lg navbar-dark" style="background-color: #763435">
+    <nav class="navbar nav-tabs navbar-expand-lg navbar-dark" style="background-color: #763435">
         <a class="navbar-brand justify-content-left" href="#">
             <img class="img d-lg-block d-none" style="height: 75px" src="Icon/header.png">
             <img class="img d-lg-none" style="height: 43px" src="Icon/header.png">
@@ -137,26 +145,27 @@ foreach($agenda as $acr){
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent" >
-            <ul class="navbar-nav mr-auto"></ul>
+            <ul class="navbar-nav mr-auto">
+            </ul>
             <li style="list-style-type:none;"><a class="btn nav-item" href="adminnew.php">DASHBOARD</a></li>
-            <li style="list-style-type:none;"><a class="btn nav-item"  style="font-weight: bold;" href="uploadnew.php">RESEARCHES</a></li>
+            <li style="list-style-type:none;"><a class="btn nav-item" href="uploadnew.php">RESEARCHES</a></li>
             <li style="list-style-type:none;"><a class="btn nav-item" href="uploadform.php">UPLOAD FORM</a></li>
             <li style="list-style-type:none;"><div class="dropdown" style="color: white;">
-                <button class="btn dropdown-toggle" id="dropdownMenuButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">OPTIONS</button>
+                <button class="btn dropdown-toggle" id="dropdownMenuButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-weight: bold">OPTIONS</button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" style="color: black" href="userManual.php">Documentation</a>
                     <a class="dropdown-item" style="color: black" href="dlForms.php">Forms</a>
                 </div>
                 </div></li>
             <li style="list-style-type:none;"><div class="dropdown" style="color: white;">
-              <button class="btn dropdown-toggle" id="dropdownMenuButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MANAGE ACCOUNT</button>
+                <button class="btn dropdown-toggle" id="dropdownMenuButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MANAGE ACCOUNT</button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" style="color: black" href="rc_accounts.php">RC Accounts</a>
                     <a class="dropdown-item" style="color: black" href="addaccount.php">Add Account</a>
-                    <a class="dropdown-item" style="color: black" href="edit_accountsample.php">Edit Account</a>
+                    <a class="dropdown-item" style="color: black" href="changepassAdmin.php">Edit Account</a>
                     <a class="dropdown-item" style="color: black" href="logout.php">Log Out</a>
                 </div>
-                </div></li>
+            </div></li>
         </div>
     </nav>
     <div class="container" style="margin-top: 3%; margin-bottom: 5%">
@@ -166,8 +175,10 @@ foreach($agenda as $acr){
                 <div class="card-body">
                     <div class="card-title"><h4><strong>Application for Research Incentive</strong> </h4></div>
                     <div class="card-footer" style="background-color: #ffffff;">
-                        <button id="1" type="button" data-toggle="collapse" href="#collapse1" class="btn btn-dark" style="width: 25%;" onclick="details(this.id)">File Details <i class="fa fa-file-word-o fa-fw"></i></button>
-                        <button id="1" type="button" class="btn btn-dark" style="width: 25%;" onclick="toDl(this.id)">Download File <i class="fa fa-download"></i></button>
+                        <div class="row">
+                            <button id="1" type="button" data-toggle="collapse" href="#collapse1" class="col mr-2 btn btn-dark" style="width: 25%;" onclick="details(this.id)">File Details <i class="fa fa-file-word-o fa-fw"></i></button>
+                            <button id="1" type="button" class="col btn btn-dark" style="width: 25%;" onclick="toDl(this.id)">Download File <i class="fa fa-download"></i></button>
+                        </div>
                         <div id="collapse1" class="collapse" data-parent="#accordion">
                             <div class="card" style="margin-top: 2%">
                                 <div class="card-body details1">
@@ -184,8 +195,10 @@ foreach($agenda as $acr){
                 <div class="card-body">
                     <div class="card-title"><h4><strong>Budgetary Requirements (with Sample)</strong> </h4></div>
                     <div class="card-footer" style="background-color: #ffffff;">
-                        <button id="2" type="button" data-toggle="collapse" href="#collapse2" class="btn btn-dark" style="width: 25%" onclick="details(this.id)">File Details <i class="fa fa-file-excel-o fa-fw"></i></button>
-                        <button id="2" type="button" class="btn btn-dark" style="width: 25%;" onclick="toDl(this.id)">Download File <i class="fa fa-download"></i></button>
+                        <div class="row">
+                            <button id="2" type="button" data-toggle="collapse" href="#collapse2" class="col mr-2 btn btn-dark" style="width: 25%" onclick="details(this.id)">File Details <i class="fa fa-file-excel-o fa-fw"></i></button>
+                            <button id="2" type="button" class="col btn btn-dark" style="width: 25%;" onclick="toDl(this.id)">Download File <i class="fa fa-download"></i></button>
+                        </div>
                         <div id="collapse2" class="collapse" data-parent="#accordion">
                             <div class="card" style="margin-top: 2%">
                                 <div class="card-body details2">
@@ -202,8 +215,10 @@ foreach($agenda as $acr){
                 <div class="card-body">
                     <div class="card-title"><h4><strong>Capsule Proposal Form</strong> </h4></div>
                     <div class="card-footer" style="background-color: #ffffff;">
-                        <button id="3" type="button" data-toggle="collapse" href="#collapse3" class="btn btn-dark" style="width: 25%" onclick="details(this.id)">File Details <i class="fa fa-file-word-o fa-fw"></i></button>
-                        <button id="3" type="button" class="btn btn-dark" style="width: 25%;" onclick="toDl(this.id)">Download File <i class="fa fa-download"></i></button>
+                        <div class="row">
+                            <button id="3" type="button" data-toggle="collapse" href="#collapse3" class="col mr-2 btn btn-dark" style="width: 25%" onclick="details(this.id)">File Details <i class="fa fa-file-word-o fa-fw"></i></button>
+                            <button id="3" type="button" class="col btn btn-dark" style="width: 25%;" onclick="toDl(this.id)">Download File <i class="fa fa-download"></i></button>
+                        </div>
                         <div id="collapse3" class="collapse" data-parent="#accordion">
                             <div class="card" style="margin-top: 2%">
                                 <div class="card-body details3">
@@ -220,8 +235,10 @@ foreach($agenda as $acr){
                 <div class="card-body">
                     <div class="card-title"><h4><strong>Completed Research Form</strong> </h4></div>
                     <div class="card-footer" style="background-color: #ffffff;">
-                        <button id="4" type="button" data-toggle="collapse" href="#collapse4" class="btn btn-dark" style="width: 25%" onclick="details(this.id)">File Details <i class="fa fa-file-word-o fa-fw"></i></button>
-                        <button id="4" type="button" class="btn btn-dark" style="width: 25%;" onclick="toDl(this.id)">Download File <i class="fa fa-download"></i></button>
+                        <div class="row">
+                            <button id="4" type="button" data-toggle="collapse" href="#collapse4" class="col mr-2 btn btn-dark" style="width: 25%" onclick="details(this.id)">File Details <i class="fa fa-file-word-o fa-fw"></i></button>
+                            <button id="4" type="button" class="col btn btn-dark" style="width: 25%;" onclick="toDl(this.id)">Download File <i class="fa fa-download"></i></button>
+                        </div>
                         <div id="collapse4" class="collapse" data-parent="#accordion">
                             <div class="card" style="margin-top: 2%">
                                 <div class="card-body details4">
@@ -238,8 +255,10 @@ foreach($agenda as $acr){
                 <div class="card-body">
                     <div class="card-title"><h4><strong>Criteria for Evaluation of Research Proposals</strong> </h4></div>
                     <div class="card-footer" style="background-color: #ffffff;">
-                        <button id="5" type="button" data-toggle="collapse" href="#collapse5" class="btn btn-dark" style="width: 25%"  onclick="details(this.id)">File Details <i class="fa fa-file-pdf-o fa-fw"></i></button>
-                        <button id="5" type="button" class="btn btn-dark" style="width: 25%;" onclick="toDl(this.id)">Download File <i class="fa fa-download"></i></button>
+                        <div class="row">
+                            <button id="5" type="button" data-toggle="collapse" href="#collapse5" class="col mr-2 btn btn-dark" style="width: 25%"  onclick="details(this.id)">File Details <i class="fa fa-file-pdf-o fa-fw"></i></button>
+                            <button id="5" type="button" class="col btn btn-dark" style="width: 25%;" onclick="toDl(this.id)">Download File <i class="fa fa-download"></i></button>
+                        </div>
                         <div id="collapse5" class="collapse" data-parent="#accordion">
                             <div class="card" style="margin-top: 2%">
                                 <div class="card-body details5">
@@ -256,8 +275,10 @@ foreach($agenda as $acr){
                 <div class="card-body">
                     <div class="card-title"><h4><strong>Full Blown Proposal Format</strong> </h4></div>
                     <div class="card-footer" style="background-color: #ffffff;">
-                        <button id="6" type="button" data-toggle="collapse" href="#collapse6" class="btn btn-dark" style="width: 25%" onclick="details(this.id)">File Details <i class="fa fa-file-word-o fa-fw"></i></button>
-                        <button id="6" type="button" class="btn btn-dark" style="width: 25%;" onclick="toDl(this.id)">Download File <i class="fa fa-download"></i></button>
+                        <div class="row">
+                            <button id="6" type="button" data-toggle="collapse" href="#collapse6" class="col mr-2 btn btn-dark" style="width: 25%" onclick="details(this.id)">File Details <i class="fa fa-file-word-o fa-fw"></i></button>
+                            <button id="6" type="button" class="col btn btn-dark" style="width: 25%;" onclick="toDl(this.id)">Download File <i class="fa fa-download"></i></button>
+                        </div>
                         <div id="collapse6" class="collapse" data-parent="#accordion">
                             <div class="card" style="margin-top: 2%">
                                 <div class="card-body details6">
@@ -274,8 +295,10 @@ foreach($agenda as $acr){
                 <div class="card-body">
                     <div class="card-title"><h4><strong>Guidelines for Proposing Researches</strong> </h4></div>
                     <div class="card-footer" style="background-color: #ffffff;">
-                        <button id="7" type="button" data-toggle="collapse" href="#collapse7" class="btn btn-dark" style="width: 25%" onclick="details(this.id)">File Details <i class="fa fa-file-pdf-o fa-fw"></i></button>
-                        <button id="7" type="button" class="btn btn-dark" style="width: 25%;" onclick="toDl(this.id)">Download File <i class="fa fa-download"></i></button>
+                        <div class="row">
+                            <button id="7" type="button" data-toggle="collapse" href="#collapse7" class="col mr-2 btn btn-dark" style="width: 25%" onclick="details(this.id)">File Details <i class="fa fa-file-pdf-o fa-fw"></i></button>
+                            <button id="7" type="button" class="col btn btn-dark" style="width: 25%;" onclick="toDl(this.id)">Download File <i class="fa fa-download"></i></button>
+                        </div>
                         <div id="collapse7" class="collapse" data-parent="#accordion">
                             <div class="card" style="margin-top: 2%">
                                 <div class="card-body details7">
@@ -292,8 +315,10 @@ foreach($agenda as $acr){
                 <div class="card-body">
                     <div class="card-title"><h4><strong>Monitoring Instrument</strong> </h4></div>
                     <div class="card-footer" style="background-color: #ffffff;">
-                        <button id="8" type="button" data-toggle="collapse" href="#collapse8" class="btn btn-dark" style="width: 25%" onclick="details(this.id)">File Details <i class="fa fa-file-word-o fa-fw"></i></button>
-                        <button id="8" type="button" class="btn btn-dark" style="width: 25%;" onclick="toDl(this.id)">Download File <i class="fa fa-download"></i></button>
+                        <div class="row">
+                            <button id="8" type="button" data-toggle="collapse" href="#collapse8" class="col mr-2 btn btn-dark" style="width: 25%" onclick="details(this.id)">File Details <i class="fa fa-file-word-o fa-fw"></i></button>
+                            <button id="8" type="button" class="col btn btn-dark" style="width: 25%;" onclick="toDl(this.id)">Download File <i class="fa fa-download"></i></button>
+                        </div>
                         <div id="collapse8" class="collapse" data-parent="#accordion">
                             <div class="card" style="margin-top: 2%">
                                 <div class="card-body details8">
@@ -310,8 +335,10 @@ foreach($agenda as $acr){
                 <div class="card-body">
                     <div class="card-title"><h4><strong>Progress Report</strong> </h4></div>
                     <div class="card-footer" style="background-color: #ffffff;">
-                        <button id="9" type="button" data-toggle="collapse" href="#collapse9" class="btn btn-dark" style="width: 25%" onclick="details(this.id)">File Details <i class="fa fa-file-word-o fa-fw"></i></button>
-                        <button id="9" type="button" class="btn btn-dark" style="width: 25%;" onclick="toDl(this.id)">Download File <i class="fa fa-download"></i></button>
+                        <div class="row">
+                            <button id="9" type="button" data-toggle="collapse" href="#collapse9" class="col mr-2 btn btn-dark" style="width: 25%" onclick="details(this.id)">File Details <i class="fa fa-file-word-o fa-fw"></i></button>
+                            <button id="9" type="button" class="col btn btn-dark" style="width: 25%;" onclick="toDl(this.id)">Download File <i class="fa fa-download"></i></button>
+                        </div>
                         <div id="collapse9" class="collapse" data-parent="#accordion">
                             <div class="card" style="margin-top: 2%">
                                 <div class="card-body details9">
@@ -328,8 +355,10 @@ foreach($agenda as $acr){
                 <div class="card-body">
                     <div class="card-title"><h4><strong>Terminal Report</strong> </h4></div>
                     <div class="card-footer" style="background-color: #ffffff;">
-                        <button id="10" type="button" data-toggle="collapse" href="#collapse10" class="btn btn-dark" style="width: 25%"  onclick="details(this.id)">File Details <i class="fa fa-file-word-o fa-fw"></i></button>
-                        <button id="10" type="button" class="btn btn-dark" style="width: 25%;" onclick="toDl(this.id)">Download File <i class="fa fa-download"></i></button>
+                        <div class="row">
+                            <button id="10" type="button" data-toggle="collapse" href="#collapse10" class="col mr-2 btn btn-dark" style="width: 25%"  onclick="details(this.id)">File Details <i class="fa fa-file-word-o fa-fw"></i></button>
+                            <button id="10" type="button" class="col btn btn-dark" style="width: 25%;" onclick="toDl(this.id)">Download File <i class="fa fa-download"></i></button>
+                        </div>
                         <div id="collapse10" class="collapse" data-parent="#accordion">
                             <div class="card" style="margin-top: 2%">
                                 <div class="card-body details10">
