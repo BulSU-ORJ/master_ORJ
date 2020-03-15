@@ -16,7 +16,8 @@ if(!$isLoggedIn) {
 <html>
 <head>   
     <link rel="icon" href="Icon/bulsuLogo.png" sizes="16x16" type="image/png"><title>Bulsu Online Research Journal</title>
-    <meta charset="utf-8">
+    <title>Bulsu Online Research Journal</title>
+	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -154,12 +155,8 @@ if(!$isLoggedIn) {
     <style>
         #uploadDiv{
             margin:0;
-            margin-top:40px;
-            padding:40px;
-            background-color:#ffffff;
-            -webkit-box-shadow:0 3px 4px 4px #777;
-            -moz-box-shadow:0 3px 4px 4px #777;
-            box-shadow:0 3px 4px 4px #777;
+            background-color:white;
+            border-radius: 10px;
             
         }
         .form-control{
@@ -172,6 +169,14 @@ if(!$isLoggedIn) {
         #disabled{
 			pointer-events: none;
 		}
+        #dropdownButton{
+            color: white;
+        }
+        #dropdownButton:hover{
+            color: white;
+            font-weight: bold;
+            transition: 0.3s;
+        }
     </style>
 </head>
 <body style="background-color: #f6f6f6">
@@ -185,9 +190,9 @@ if(!$isLoggedIn) {
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent" >
             <ul class="navbar-nav mr-auto"></ul>
-            <li style="list-style-type:none;"><a class="btn nav-item" href="adminnew.php">DASHBOARD</a></li>
-            <li style="list-style-type:none;"><a class="btn nav-item"  style="font-weight: bold;" href="uploadnew.php" >RESEARCHES</a></li>
-            <li style="list-style-type:none;"><a class="btn nav-item" href="uploadform.php" id="disabled">UPLOAD FORM</a></li>
+            <li style="list-style-type:none;"><a class="btn nav-item" href="adminnew.php" >DASHBOARD</a></li>
+            <li style="list-style-type:none;"><a class="btn nav-item" href="uploadnew.php" >RESEARCHES</a></li>
+            <li style="list-style-type:none;"><a class="btn nav-item" href="uploadform.php" style="font-weight: bold;" id="disabled">UPLOAD FORM</a></li>
             <li style="list-style-type:none;"><div class="dropdown" style="color: white;">
                 <button class="btn dropdown-toggle" id="dropdownMenuButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">OPTIONS</button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -195,11 +200,12 @@ if(!$isLoggedIn) {
                     <a class="dropdown-item" style="color: black" href="dlForms.php">Forms</a>
                 </div>
                 </div></li>
+            
             <li style="list-style-type:none;"><div class="dropdown" style="color: white;">
               <button class="btn dropdown-toggle" id="dropdownMenuButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MANAGE ACCOUNT</button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" style="color: black" href="rc_accounts.php">RC Accounts</a>
                     <a class="dropdown-item" style="color: black" href="addaccount.php">Add Account</a>
+                    <a class="dropdown-item" style="color: black" href="rc_accounts.php">RC Accounts</a>
                     <a class="dropdown-item" style="color: black" href="edit_accountsample.php">Edit Account</a>
                     <a class="dropdown-item" style="color: black" href="logout.php">Log Out</a>
                 </div>
@@ -207,9 +213,8 @@ if(!$isLoggedIn) {
         </div>
     </nav>
     
-    <div class="container">
-        <div class="row justify-content-center" style="padding-bottom:20px;">
-            <div class="col-sm-6" id="uploadDiv">
+    <div class="container  mt-5 mb-5">
+        <div class="shadow justify-content-center p-5 m-auto col-sm-8" id="uploadDiv">
             <div class="form-group" style="text-align: center;">
                 <h3 >Upload Form</h3>
             </div>
@@ -220,32 +225,27 @@ if(!$isLoggedIn) {
 						<input type="text" readonly class="form-control-plaintext" id="staticRN" style="border:none;" value="<?php $auth->getResearchNo() ?>">
 					</div>
 				</div>
-                <div class="form-group">
+                <div class="row">
+                <div class="form-group col-sm-6">
 					<label for="fname">Author's First Name:</label>
                     <input type="text" class="form-control" id="fname" name="fname" autofocus>
                 </div>
-                <div class="form-group">
+                <div class="form-group col-sm-6">
 					<label for="lname">Author's Last Name:</label>
                     <input type="text" class="form-control" id="lname" name="lname">
+                </div>
                 </div>
                 <div class="form-group">
 					<label for="email">Author's Email Address:</label>
                     <input type="email" class="form-control" id="email" name="email">
                 </div>
-                <p>Author's Affiliation</p>
-                <div class="form-check form-check-inline" style=" margin-left:15%;margin-right:25%;">
-						<input class="form-check-input" type="radio" name="radio" id="student" value="student" checked>
-						<label class="form-check-label" for="student">
-							Student
-						</label>
-					</div>
-				    <div class="form-check form-check-inline">
-					   <input class="form-check-input" type="radio" name="radio" id="faculty" value="faculty">
-                        <label class="form-check-label" for="faculty">
-                            Faculty Member
-					   </label>
-                     </div>
-                <div class="form-group">
+                <label>Author's Affiliation</label><br>
+                <div class="form-group row text-center">
+                        <label class="radio-inline col"><input type="radio" id="student" name="radio" value="student" checked> Student</label>
+                        <label class="radio-inline col"><input type="radio" id="faculty" value="faculty" name="radio"> Faculty</label>
+                </div><br>
+                <div class="row mt-3">
+                <div class="form-group col">
                     <label for="agenda">Research Agenda:</label>
                     <select class="form-control" id="agenda" name="agenda">
                         <option selected disabled>Select Agenda</option>
@@ -260,7 +260,7 @@ if(!$isLoggedIn) {
 							<option>Education and the Pedagogy for the Filipino Learners</option>
                     </select>
                 </div>
-				<div class="form-group">
+				<div class="form-group col">
                     <label for="college">College Department:</label>
                     <select class="form-control" id="college" name="college">
                         <option selected disabled>Select College</option>
@@ -286,6 +286,7 @@ if(!$isLoggedIn) {
                             <option>Bulsu-Sarmiento Campus</option>
                     </select>
                 </div>
+                </div><br>
                 <div class="form-group">
                     <label for="uploaded_file">Full Research PDF:</label>
                     <input type="file" class="form-control-file" id="uploaded_file" 
@@ -304,7 +305,6 @@ if(!$isLoggedIn) {
             </form>
                 
             </div>
-        </div>
     </div>
 </body>
 </html>
