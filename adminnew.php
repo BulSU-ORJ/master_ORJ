@@ -9,7 +9,6 @@ $auth = new Auth();
 if(!$isLoggedIn) {
     header("Location: loginSample.php");
 }
-include('connect.php');
 $output='';
 $acronyms= array('CAFA','CAL','CBA','CCJE','CHTM','CICT','CIT','CLaw','CN','COE','COED','CS','CSER','CSSP','GS');
 foreach($acronyms as $acr){
@@ -47,12 +46,10 @@ foreach($agenda as $acr){
     <link rel="stylesheet" href="trytry.css">
 	
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
 	<script type="text/javascript">
 		$(document).ready(function(){
 			google.charts.load('current', {'packages':['corechart']});
 			google.charts.setOnLoadCallback(drawChart);
-			google.charts.setOnLoadCallback(drawChart1);
 			function drawChart() {
 				var data = google.visualization.arrayToDataTable([
 					['Colleges', 'number'],
@@ -61,21 +58,20 @@ foreach($agenda as $acr){
 					?>
 				]);
 				var options = {
-					'title': 'Number of Researches per Colleges',
+					'title': 'Number of Researches per College',
                     titleTextStyle: {
                         color: ('#763435'),
                         fontName: 'Raleway',
                         fontSize: 20,
                         bold: true,
                     },
-                    height: 300,
-                    width: 535,
                     colors:['#29a8ab','#74546a','#f67e7d','#ff8c61','#247ba0','#ffe066','#6d6875','#5c374c','#4a7c59','#ee2e31','#c9cba3','#3a506b','#9a8c98','#e9c46a','#264653'],
 				};
 				var chart = new google.visualization.PieChart(document.getElementById('pieChart'));
 				chart.draw(data, options);
 			}
             
+            google.charts.setOnLoadCallback(drawChart1);
             function drawChart1() {
                 var data = google.visualization.arrayToDataTable([
                   ['Agenda', 'number'],
@@ -92,17 +88,18 @@ foreach($agenda as $acr){
                         fontSize: 20,
                         bold: true,
                     },
-                    titlePosition: 'left',
+                   
                     pieHole: 0.4,
-                    height: 300,
-                    width: 535,
                     colors: ['#e0a899','#8b9dc3','#ff6f69','#ffcc5c','#88d8b0','#c99789','#8b9dc3'],
                 };
 
                 var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
                 chart.draw(data, options);
               }
-
+            $(window).resize(function(){
+              drawChart();
+              drawChart1();
+            });
 		});
 
 	</script>
@@ -110,19 +107,20 @@ foreach($agenda as $acr){
 		#disabled{
 			pointer-events: none;
 		}
-        #pieChart svg, #donutchart svg{
-            background: white;
-            border-radius: .5rem;
-            padding: .5rem;
-            margin: 0 auto;,
-            box-shadow: 0 2px 1rem rgba(0,0,0,.2);
-        }
         #dropdownButton{
             color: white;
         }
         #dropdownButton:hover{
             color: black;
             transition: 0.3s;
+        }
+        .btn nav-item a:hover{
+            color: white;
+            font-weight: bold;
+        }
+        .chart {
+          width: 100%; 
+          min-height: 400px;
         }
 	</style>
 </head>
@@ -274,8 +272,12 @@ foreach($agenda as $acr){
                 </div>
         
             <div class="row" style="margin-top:5%">
-                <div class="col-xl-6 col-lg-12 mb-3" id="pieChart"></div>
-                <div class="col-xl-6 col-lg-12 mb-3" id="donutchart"></div>
+                <div class="col-md-6 mb-3">
+                    <div class="chart" id="pieChart"></div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="chart" id="donutchart"></div>
+                </div>
         </div>
     </div>
 </body>
