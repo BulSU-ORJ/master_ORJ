@@ -11,13 +11,12 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
         <link rel="stylesheet" href="trytry.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.5.3/dist/sweetalert2.all.min.js"></script>
         <style>
     body{
-      background:url("Icon/background2.png") center no-repeat;
-      background-size: cover;
-        background-attachment: fixed;
+    background:url("Icon/background2.png") center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     }
     .form-container{
     background: #fff;
@@ -39,32 +38,42 @@
         width: 100%;
         margin-top: 0;
       }
-    }
-    
+    } 
     </style>
 </head>
 <body>
-    
 	<div class="container">
-            <form class="form-container col-sm-6 col-md-6   " style="float:right; margin-top: 6%" method="POST" action="register.php" onsubmit="return Validate();" name="vform">
-                <div class="form-group" style="text-align: center;">
-                    <h3>Sign Up Here</h3>
+            <form class="form-container col-sm-6 col-md-6" style="float:right; margin-top: 6%" method="POST" action="register.php" name="vform">
+                <div class="form-group" style="text-align: center;  margin-bottom:10%">
+                    <h2>Sign Up Here</h2>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-4" style="float: left;">First Name:</label>
-                    <input type="text" style="float:right"  class="form-control form-control-lg col-sm-8" name="firstname" placeholder="Enter First Name" required>
-                    <label class="col-sm-4" style="float: left;">Last Name:</label>
-                    <input type="text" style="float:right"  class="form-control form-control-lg col-sm-8" name="lastname" placeholder="Enter Last Name" required>
-                    <label class="col-sm-4"style="float: left;">Username:</label>
-                    <input type="text" style="float:right"  class="form-control form-control-lg col-sm-8"  name="username" id="username" onchange ="checkname();" placeholder="Enter Username" required>
+                    <div class="row" style="margin-bottom: 10px; margin-right: 5px">
+                    <label class="col-sm-4">First Name:</label>
+                    <input type="text" style="padding-top: 2px; padding-bottom: 2px; float:right" class="form-control form-control-lg col-sm-8" name="firstname" placeholder="Enter First Name" required>
+                    </div>
+                    <div class="row" style="margin-bottom: 10px; margin-right: 5px">
+                    <label class="col-sm-4">Last Name:</label>
+                    <input type="text" style="padding-top: 2px; padding-bottom: 2px; float:right" class="form-control form-control-lg col-sm-8" name="lastname" placeholder="Enter Last Name" required>
+                    </div>
+                    <div class="row" style="margin-bottom: 10px; margin-right: 5px">
+                    <label class="col-sm-4">Username:</label>
+                    <input type="text" style="padding-top: 2px; padding-bottom: 2px; float:right" class="form-control form-control-lg col-sm-8" name="username" id="username" onchange ="checkname();" placeholder="Enter Username" required>
                     <div id="name_error"></div>
-                    <label class="col-sm-4"style="float: left;">Password:</label>
-                    <input type="password" style="float:right"  class="form-control form-control-lg col-sm-8" name="password" placeholder="Enter Password" required>
-                    <label class="col-sm-4"style="float: left;">Confirm Password:</label>
-                    <input type="password" style="float:right;"  class="form-control form-control-lg col-sm-8" name="password_confirm" placeholder="Enter Confirm Password" required>
-                    <label class="col-sm-4"style="float: left;">Email:</label><br>
-                    <input type="email" style="float:right"  class="form-control form-control-lg col-sm-8" name="email" id="email" onchange="checkemail();" placeholder="Enter Email Address" required>
+                    </div>
+                    <div class="row" style="margin-bottom: 10px; margin-right: 5px">
+                    <label class="col-sm-4">Password:</label>
+                    <input type="password" style="padding-top: 2px; padding-bottom: 2px; float:right" class="form-control form-control-lg col-sm-8" name="password" placeholder="Enter Password" required>
+                    </div>
+                    <div class="row" style="margin-bottom: 10px; margin-right: 5px">
+                    <label class="col-sm-4">Confirm Password:</label>
+                    <input type="password" style="padding-top: 2px; padding-bottom: 2px; float:right" class="form-control form-control-lg col-sm-8" name="password_confirm" placeholder="Enter Confirm Password" required>
+                    </div>
+                    <div class="row" style="margin-bottom: 10px; margin-right: 5px">
+                    <label class="col-sm-4">Email:</label><br>
+                    <input type="email" style="padding-top: 2px; padding-bottom: 2px; float:right" class="form-control form-control-lg col-sm-8" name="email" id="email" onchange="checkemail();" placeholder="Enter Email Address" required>
                     <div id="email_error"></div>
+                    </div>
                 <button type="submit" class="btn btn-lg btn-dark btn-block" name="signup-btn" style="margin-top: 20px;">Sign Up</button><br>
                 <p style="text-align: center">Already have an account? <a href="loginGuest.php">Login</a></p>
                 </div>
