@@ -27,22 +27,22 @@ if(!$isLoggedIn) {
     <link rel="stylesheet" href="trytry.css">
 	
 	<style>
-		#disabled{
+        #disabled{
 			pointer-events: none;
 		}
 		.form-container{
     		background: #fff;
     		padding: 30px;
     		border-radius:10px;
-    		box-shadow: 0px 0px 10px 0px #000;
+    		/*box-shadow: 0px 0px 10px 0px #000;*/
     	}
 	</style>
 </head>
-<body>
+<body style="background: #f6f6f6">
 	<nav class="navbar nav-tabs navbar-expand-lg navbar-dark" style="background-color: #763435">
         <a class="navbar-brand" href="#">
-            <img class="img-fluid d-lg-block d-none" style="height: 85px" src="Icon/header.png">
-            <img class="img-fluid d-lg-none" style="height: 49px" src="Icon/header.png">
+            <img class="img d-lg-block d-none" style="height: 75px" src="Icon/header.png">
+            <img class="img d-lg-none" style="height: 43px" src="Icon/header.png">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -50,7 +50,7 @@ if(!$isLoggedIn) {
         <div class="collapse navbar-collapse" id="navbarSupportedContent" >
             <ul class="navbar-nav mr-auto">
             </ul>
-            <a class="btn nav-item" style="font-weight: bold" href="adminnew.php">DASHBOARD</a>
+            <a class="btn nav-item" href="adminnew.php">DASHBOARD</a>
             <a class="btn nav-item" href="uploadnew.php">RESEARCHES</a>
             <a class="btn nav-item" href="uploadform.php">UPLOAD FORM</a>
             <div class="dropdown" style="color: white">
@@ -61,7 +61,7 @@ if(!$isLoggedIn) {
                 </div>
             </div>
             <div class="dropdown" style="color: white">
-                <button class="btn dropdown-toggle" id="dropdownMenuButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MANAGE ACCOUNT</button>
+                <button class="btn dropdown-toggle" style="font-weight: bold" id="dropdownMenuButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MANAGE ACCOUNT</button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" style="color: black" href="addaccount.php">Add Account</a>
                     <a class="dropdown-item" style="color: black" href="rc_accounts.php">RC Accounts</a>
@@ -71,35 +71,40 @@ if(!$isLoggedIn) {
             </div>
         </div>
     </nav>
-    <div class="container">
-           	<form class="form-container col-sm-6 col-md-6   " style="float:right; margin-top: 6%" method="POST" action="addaccount.php" onsubmit="return Validate();" name="vform">
-                <div class="form-group" style="text-align: center;">
+    <div class="container mt-5 mb-5">
+           	<div class="form-container shadow justify-content-center p-5 m-auto col-sm-8" method="POST" action="addaccount.php" onsubmit="return Validate();" name="vform">
+                <div class="form-group mb-5" style="text-align: center;">
                     <h3>Add Account Here</h3>
                 </div>
-                <div class="form-group">
-                        <label class="col-sm-4">First Name:</label>
-                        <input type="text" style="float: right;"class="form-control form-control-lg col-sm-8" name="firstname" placeholder="Enter First Name" required>
-                    
+                <div class="form-group row">
+                        <label class="inline col-sm-4">First Name:</label>
+                        <input type="text" class="form-control col-sm-8" name="firstname" placeholder="Enter First Name" required>
+                </div>
+                <div class="form-group row">
                         <label class="col-sm-4">Last Name:</label>
-                        <input type="text" style="float:right"  class="form-control form-control-lg col-sm-8" name="lastname" placeholder="Enter Last Name" required>
-
+                        <input type="text" class="form-control col-sm-8" name="lastname" placeholder="Enter Last Name" required>
+                </div>
+                <div class="form-group row">
                         <label class="col-sm-4">Username:</label>
-                        <input type="text" style="float:right"  class="form-control form-control-lg col-sm-8"  name="username" id="username" onchange="checkuser();" placeholder="Enter Username" required>
+                        <input type="text" class="form-control col-sm-8"  name="username" id="username" onchange="checkuser();" placeholder="Enter Username" required>
                         <div id="name_error"></div>
-                    
+                </div>
+                <div class="form-group row">
                         <label class="col-sm-4">Password:</label>
-                        <input type="password" style="float:right"  class="form-control form-control-lg col-sm-8" name="password" placeholder="Enter Password" required>
-                    
+                        <input type="password" class="form-control col-sm-8" name="password" placeholder="Enter Password" required>
+                </div>
+                <div class="form-group row">
                         <label class="col-sm-4">Confirm Password:</label>
-                        <input type="password" style="float:right;"  class="form-control form-control-lg col-sm-8" name="password_confirm" placeholder="Enter Confirm Password" required>
-                     
+                        <input type="password" class="form-control col-sm-8" name="password_confirm" placeholder="Enter Confirm Password" required>
+                </div>
+                <div class="form-group row">
                         <label class="col-sm-4">Email:</label><br>
-                        <input type="email" style="float:right"  class="form-control form-control-lg col-sm-8" name="email" id="email"  onchange="checkemail();" placeholder="Enter Email Address" required>
+                        <input type="email" class="form-control col-sm-8" name="email" id="email"  onchange="checkemail();" placeholder="Enter Email Address" required>
                         <div id="email_error"></div>
-                    
-                    <div class="form-group">
-                    <label for="college">College Department:</label>
-                    <select class="form-control" id="college" name="college">
+                </div>
+                <div class="form-group row">
+                    <label for="college" class="col-sm-4">College Department:</label>
+                    <select class="form-control col-sm-8" id="college" name="college">
                         <option selected disabled>Select College</option>
                             <option>College of Architecture and Fine Arts (CAFA)</option>
                             <option>College of Arts and Letters (CAL)</option>
@@ -118,10 +123,9 @@ if(!$isLoggedIn) {
 							<option>Graduate School (GS)</option>
                     </select>
                 </div>
-                <button type="submit" class="btn btn-lg btn-dark btn-block" name="addacc-btn" style="margin-top: 20px;">Add Account</button><br>
+                <button type="submit" class="btn btn-dark btn-block" name="addacc-btn" style="margin-top: 20px;">Add Account</button><br>
                 <p style="text-align: center">Already have an account? <a href="loginSample.php">Login</a></p>
-                </div>
-            </form>
+            </div>
     </div>
 </body>
 </html>
