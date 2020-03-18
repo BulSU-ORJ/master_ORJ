@@ -44,8 +44,6 @@ function filterTable($query){
 		});
 	</script>
     <script>
-    </script>
-    <script>
 		function getInfo(researchNo){
 			var rnVar="researchNo="+researchNo;
 			$.ajax({
@@ -174,7 +172,7 @@ function filterTable($query){
     <button id="myBtn">Back To Top</button>
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #763435">
         <a class="navbar-brand" href="B-Home.php">
-            <img class="img-fluid d-lg-block d-none" style="height: 85px" src="Icon/header.png">
+            <img class="img-fluid d-lg-block d-none" style="height: 75px" src="Icon/header.png">
             <img class="img-fluid d-lg-none" style="height: 43px" src="Icon/header.png">
         </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -183,63 +181,21 @@ function filterTable($query){
         <div class="collapse navbar-collapse" id="navbarSupportedContent" >
             <ul class="navbar-nav mr-auto">
             </ul>
-            <a class="btn nav-item" href="B-Home.php">HOME</a>
-            <a class="btn nav-item" href="B-Researches.php">RESEARCHES</a>
-            <a class="btn nav-item" href="B-Agenda.php">AGENDA</a>
-            <!--div class="btn-group btn-dropdown mr-2">
-              <button type="button" class="btn" id="btndropdown"><a href="B-Agenda.php" style="text-decoration:none; font-weight: bold">AGENDA</a></button>
-              <button type="button" class="btn dropdown-toggle dropdown-toggle-split" id="btndropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
-              </button>
-              <div class="dropdown-menu dropdown-menu-lg-right">
-                <a class="dropdown-item" href="BB-SSH.php">Climate Change and Adaptation</a>
-                <a class="dropdown-item" href="BB-BI.php">Biodiversity and the Management of the Natural Environment</a>
-                <a class="dropdown-item" href="BB-PAS.php">Food Safety and Security</a>
-                <a class="dropdown-item" href="BB-EIT.php">Diagnosis and Prevention of Human Diseases and Health Status of Vulnerable Groups</a>
-                <a class="dropdown-item" href="BB-HSS.php">Industry Assistance Towards Efficient Production and Achieving Global Standards</a>
-                <a class="dropdown-item" href="BB-Ed.php">Cultural Heritage and Conservation</a>
-                <a class="dropdown-item" href="BB-Ed.php">Restructuring Society and Understanding Culture Towards Inclusive Nation Building</a>
-                <a class="dropdown-item" href="BB-Ed.php">Emerging Technology and Applications to Inclusive Nation Building</a>
-                <a class="dropdown-item" href="BB-Ed.php">Education and the Pedagogy for the Filipino Learners</a>
-              </div>
-            </div-->
-            <div class="btn-group btn-dropdown mr-2">
-              <button type="button" class="btn" id="btndropdown"><a href="B-Colleges.php" style="text-decoration:none; font-weight: bold">COLLEGES</a></button>
-              <button type="button" class="btn dropdown-toggle dropdown-toggle-split" id="btndropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
-              </button>
-              <div class="dropdown-menu dropdown-menu-right" id="dropdownNav">
-                 <a class="dropdown-item" href="#section1">College of Architecture and Fine Arts (CAFA)</a>
-                <a class="dropdown-item" href="#section2">College of Arts and Letters (CAL)</a>
-                <a class="dropdown-item" href="#section3">College of Business Administration (CBA)</a>
-                <a class="dropdown-item" href="#section4">College of Criminal Justice Education (CCJE)</a>
-                <a class="dropdown-item" href="#section5">College of Hospitality and Tourism Management (CHTM)</a>
-                <a class="dropdown-item" href="#section6">College of Information and Communications Technology (CICT)</a>
-                <a class="dropdown-item" href="#section7">College of Industrial Technology (CIT)</a>
-                <a class="dropdown-item" href="#section8">College of Law (CLaw)</a>
-                <a class="dropdown-item" href="#section9">College of Nursing (CN)</a>
-                <a class="dropdown-item" href="#section10">College of Engineering (COE)</a>
-                <a class="dropdown-item" href="#section11">College of Education (COED)</a>
-                <a class="dropdown-item" href="#section12">College of Science (CS)</a>
-                <a class="dropdown-item" href="#section13">College of Sports, Exercise and Recreation (CSER)</a>
-                <a class="dropdown-item" href="#section14">College of Social Sciences and Philosophy (CSSP)</a>
-                <a class="dropdown-item" href="#section15">Graduate School (GS)</a>
-              </div>
-            </div>
+            <li style="list-style-type:none;"><a class="btn nav-item" href="index.php">HOME</a></li>
+            <li style="list-style-type:none;"><a class="btn nav-item" href="B-Researches.php">RESEARCHES</a></li>
+            <li style="list-style-type:none;"><a class="btn nav-item" href="B-Agenda.php">AGENDA</a></li>
+            <li style="list-style-type:none;"><a class="btn nav-item" href="B-Colleges.php">COLLEGES</a></li>
+            <li style="list-style-type:none;"><a class="btn nav-item" href="register.php">REGISTER</a></li>
+            <li style="list-style-type:none;"><a class="btn nav-item" href="loginGuest.php">LOGIN</a></li>
         </div>   
     </nav><br>
     <div class="container">
         <form action="details.php" method="post" id="search-form">
             <div class="row">
-                <!--<div class="col-md-8 offset-md-2 bg-light p-4 mt-3 rounded">
-                    <form action="details.php" method="post"  class="form-inline p-3">
-                        <input type="text" autocomplete="off" name="search" id="search" class="form-control form-control-lg rounded-0 " placeholder="Search Here" style="width:100%;">
-                        <!--input type="submit" name="search" value="Search" class="btn btn-dark btn-lg rounded-0" style="width:auto"-->
-                   <!-- </form>-->
-                <!--</div>-->
                 <div class="input-group col-md-8 offset-md-2 bg-light p-4 mt-4 rounded">
                     <input class="form-control border-right-0" typeahead-focus-first="false" autocomplete="off" type="text" name="search" id="search" placeholder="Search Here">
                     <span class="input-group-append bg-white border-left-0">
                         <span class="input-group-text bg-transparent">
-                            <!--input type="submit" name="search" value="Search" class="btn btn-dark btn-lg rounded-0" style="width:auto"-->
                                 <i class="fa fa-search"></i>
                         </span>
                     </span>
@@ -248,8 +204,8 @@ function filterTable($query){
         </form>
     </div><hr>
     <div class="container">
-       <div class="row" style="margin-left: 50px;">
-           <ul style="list-style-type:none;"><br>
+       <div class="row">
+           <ul class="col" style="list-style-type:none; padding: none; margin: none"><br>
 		<?php
 			include('connect.php');
 			$search=$_POST['search'];
@@ -265,7 +221,8 @@ function filterTable($query){
 			while($row=mysqli_fetch_array($result)){
 				?>	
 				<li>
-                    <div class="card" style="border-radius: 5px; padding:3%; margin-bottom:2%; margin-top: 3%" >
+                    <div class="container">
+                    <div class="card col-md-8" style="border-radius: 5px; padding:3%; margin-bottom:2%; margin-top: 3%" >
                         <a href="<?php echo $row['researchNo']; ?>" id="<?php echo $row['researchNo']; ?>" data-toggle="modal" data-target="#mymodal" onclick="getInfo(this.id)" style="color:black">
                         <h5 class="card-title crop-text-3"><strong>
                         <?php echo $row['title']; ?>
@@ -281,6 +238,7 @@ function filterTable($query){
                         <?php echo $row['abstract'];
                         ?> 
                         </p>
+                    </div>
                     </div>
 				</li>
 				<?php
@@ -413,39 +371,37 @@ function filterTable($query){
         
     </div>
        <!-- </div>--><br><br><br>
-<div class="container-fluid" style="background-color: dimgray; padding: 2%">
+<footer class="page-footer font-small pt-4" style="background-color: dimgray">
+    <div class="container-fluid text-md-left" style="padding-top: 2%; color: white">
         <div class="row">
-            <div class="col-sm-4">
-                <div class="container fa-2px">
-                    <ul>
-                        <h6><b>ABOUT US</b></h6><br>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                    </ul>
-                </div>
+            <div class="col-md-4 mb-md-0 mb-4" style="padding-left: 4%">
+                <h6 style="color: black"><b>ABOUT US</b></h6><br>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
             </div>
-            <div class="col-sm-4">
-                <div class="container fa-2px">
-                    <ul>
-                        <h6><b>CONTACT US</b></h6><br>
-                        <p><i class="fa fa-map-marker"></i>Brgy. Guinhawa, Malolos, Bulacan</p>
-                        <p><i class="fa fa-envelope"></i><a href="https://bulsu.edu.ph" target="_blank">officeofthepresident@bulsu.edu.ph</a></p>
-                        <p><i class="fa fa-phone"></i>919-7800</p>
-                    </ul>
-                </div>
+            <div class="col-md-4 mb-md-0 mb-4 pd-0" style="padding-left: 5%">
+                <h6 style="color: black"><b>CONTACT US</b></h6><br>
+                <p><i class="fa fa-map-marker"></i>Brgy. Guinhawa, Malolos, Bulacan</p>
+                <p><i class="fa fa-envelope"></i><a href="https://bulsu.edu.ph" target="_blank" style="color: white">officeofthepresident@bulsu.edu.ph</a></p>
+                <p><i class="fa fa-phone"></i>919-7800</p>
             </div>
-            <div class="col-sm-4">
-                <div class="container">
-                    <ul>
-                        <h6><b>NAVIGATION</b></h6><br>
-                        <a class="nav-link" href="B-Home.php"><i class="fa fa-home"></i>HOME</a>
-                        <a class="nav-link" href="B-Researches.php"><i class="fa fa-book"></i>RESEARCHES</a>
-                        <a class="nav-link" href="B-Agenda.php"><i class="fa fa-cubes"></i>AGENDA</a>
-                        <a class="nav-link" href="B-Colleges.php" style="font-weight: bold"><i class="fa fa-flag"></i>COLLEGES</a>
-                    </ul>
-                </div>
+            <div class="col-md-4 mb-md-0 mb-4">
+                <h6 style="color: black"><b>NAVIGATION</b></h6><br>
+                    <div class="row">
+                        <div class="col">
+                            <a class="nav-link" href="index.php" style="padding-left:0px; color: white"><i class="fa fa-home"></i> HOME</a>
+                            <a class="nav-link" href="B-Researches.php" style="padding-left:0px; color: white"><i class="fa fa-book"></i> RESEARCHES</a>
+                            <a class="nav-link" href="B-Agenda.php" style="padding-left:0px; color: white"><i class="fa fa-cubes"></i> AGENDA</a>
+                        </div>
+                        <div class="col">
+                            <a class="nav-link" href="B-Colleges.php" style="padding-left:0px; color: white"><i class="fa fa-flag"></i> COLLEGES</a>
+                            <a class="nav-link" href="register.php" style="padding-left:0px; color: white"><i class="fa fa-user-plus"></i> REGISTER</a>
+                            <a class="nav-link" href="loginGuest.php" style="padding-left:0px; color: white"><i class="fa fa-sign-in"></i> LOGIN</a>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
+</footer>
 </body>
 </html>
 

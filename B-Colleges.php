@@ -589,47 +589,37 @@ function filterTable($query){
         </script>
         </div>
        <!-- </div>--><br><br><br>
-<div class="container-fluid" style="background-color: dimgray;">
-        <div class="row" style="padding: 3%">
-            <div class="col">
-                <div class="container fa-2px">
-                    <ul>
-                        <h6><b>ABOUT US</b></h6><br>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                    </ul>
-                </div>
+<footer class="page-footer font-small pt-4" style="background-color: dimgray">
+    <div class="container-fluid text-md-left" style="padding-top: 2%; color: white">
+        <div class="row">
+            <div class="col-md-4 mb-md-0 mb-4" style="padding-left: 4%">
+                <h6 style="color: black"><b>ABOUT US</b></h6><br>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
             </div>
-            <div class="col">
-                <div class="container fa-2px">
-                    <ul>
-                        <h6><b>CONTACT US</b></h6><br>
-                        <p><i class="fa fa-map-marker"></i>Brgy. Guinhawa, Malolos, Bulacan</p>
-                        <p><i class="fa fa-envelope"></i><a href="https://bulsu.edu.ph" target="_blank">officeofthepresident@bulsu.edu.ph</a></p>
-                        <p><i class="fa fa-phone"></i>919-7800</p>
-                    </ul>
-                </div>
+            <div class="col-md-4 mb-md-0 mb-4 pd-0" style="padding-left: 5%">
+                <h6 style="color: black"><b>CONTACT US</b></h6><br>
+                <p><i class="fa fa-map-marker"></i>Brgy. Guinhawa, Malolos, Bulacan</p>
+                <p><i class="fa fa-envelope"></i><a href="https://bulsu.edu.ph" target="_blank" style="color: white">officeofthepresident@bulsu.edu.ph</a></p>
+                <p><i class="fa fa-phone"></i>919-7800</p>
             </div>
-            <div class="col">
-                <div class="container">
-                    <ul>
-                        <h6><b>NAVIGATION</b></h6><br>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <a class="nav-link" href="B-Home.php" style="padding-left:0px"><i class="fa fa-home"></i> HOME</a>
-                                <a class="nav-link" href="B-Researches.php" style="padding-left:0px"><i class="fa fa-book"></i> RESEARCHES</a>
-                                <a class="nav-link" href="B-Agenda.php" style="padding-left:0px"><i class="fa fa-cubes"></i> AGENDA</a>
-                                <a class="nav-link" href="B-Colleges.php" style="font-weight: bold; padding-left:0px"><i class="fa fa-flag"></i> COLLEGES</a>
-                            </div>
-                            <div class="col-sm-6">
-                                <a class="nav-link" href="register.php"><i class="fa fa-user-plus"></i> REGISTER</a>
-                                <a class="nav-link" href="loginGuest.php"><i class="fa fa-sign-in"></i> LOGIN</a>
-                            </div>
+            <div class="col-md-4 mb-md-0 mb-4">
+                <h6 style="color: black"><b>NAVIGATION</b></h6><br>
+                    <div class="row">
+                        <div class="col">
+                            <a class="nav-link" href="index.php" style="padding-left:0px; color: white"><i class="fa fa-home"></i> HOME</a>
+                            <a class="nav-link" href="B-Researches.php" style="padding-left:0px; color: white"><i class="fa fa-book"></i> RESEARCHES</a>
+                            <a class="nav-link" href="B-Agenda.php" style="padding-left:0px; color: white"><i class="fa fa-cubes"></i> AGENDA</a>
                         </div>
-                    </ul>
-                </div>
+                        <div class="col">
+                            <a class="nav-link" href="B-Colleges.php" style="font-weight: bold; padding-left:0px; color: white"><i class="fa fa-flag"></i> COLLEGES</a>
+                            <a class="nav-link" href="register.php" style="padding-left:0px; color: white"><i class="fa fa-user-plus"></i> REGISTER</a>
+                            <a class="nav-link" href="loginGuest.php" style="padding-left:0px; color: white"><i class="fa fa-sign-in"></i> LOGIN</a>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
+</footer>
 </body>
 </html>
 
